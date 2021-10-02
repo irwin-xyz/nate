@@ -10,61 +10,55 @@ gulp.task('fetch-all', [
   'fetch-strava'
 ]);
 gulp.task('fetch-goodreads', function (cb) {
-  var GoodreadsApi = require('goodreads');
-  var goodreads = new GoodreadsApi.client({
-    key: secrets.goodreads.key,
-    secret: secrets.goodreads.secret
-  });
-  var count = 0;
-  var interval;
+  let books = [];
+  let currentPage = 1;
+  const https = require('https');
+  const xml2js = require('xml2js');
+  let totalPages = 1;
 
-  goodreads.getShelves('76558', function (json) {
-    // console.log(JSON.stringify(json));
-    count++;
-  });
-  goodreads.getSingleShelf({
-    page: 1,
-    per_page: 200,
-    shelf: 'read',
-    userID: '76558'
-  }, function (json) {
-    var books = json.GoodreadsResponse.books[0].book;
 
-    // TODO: This will work until you read 400+ books :-)
-    goodreads.getSingleShelf({
-      page: 2,
-      per_page: 200,
-      shelf: 'read',
-      userID: '76558'
-    }, function (json2) {
-      var books2 = json2.GoodreadsResponse.books[0].book;
 
-      for (var i = 0; i < books2.length; i++) {
-        books.push(books2[i]);
-      }
 
-      books.sort(function (a, b) {
-        var nameA = a.title[0].toUpperCase();
-        var nameB = b.title[0].toUpperCase();
+  const getRequest = new Promise((resolve, reject) => {
+    let parser = new xml2js.Parser();
+    let tmp = [];
 
-        return (nameA < nameB) ? -1 : (nameA > nameB) ? 1 : 0;
+    return https.get(`https://www.goodreads.com/review/list/76558.xml?key=${secrets.goodreads.key}&v=2&page=${currentPage}&per_page=200shelf=read`, (response) => {
+      response.on('data', chunk => tmp.push(chunk));
+      response.on('end', e => {
+        return parser.parseString(tmp.join(''));
       });
+      response.setEncoding('utf8');
+
+      return parser.on('end', result => resolve(result));
+    }).end();
+  });
+  const handleResponse = (response) => {
+    const obj = response.GoodreadsResponse.reviews[0];
+
+    books = books.concat(obj.review);
+    totalPages = Math.ceil(obj.$.total / 200);
+
+    if (currentPage < totalPages) {
+      currentPage++;
+      getRequest.then(handleResponse);
+    } else {
+      cleanedBooks.pu
+
+
       fs.writeFile('_data/books.json', JSON.stringify(books), function (error) {
         if (error) {
           return console.log('Error: ' + error);
         }
 
-        count++;
+        cb();
       });
-    });
-  });
-
-  interval = setInterval(function () {
-    if (count === 2) {
-      clearInterval(interval);
-      cb();
     }
-  }, 500);
+  };
+
+  getRequest.then((response) => {
+    handleResponse(response);
+  });
 });
 gulp.task('fetch-spotify', function (cb) {
   var SpotifyApi = require('spotify-web-api-node');
