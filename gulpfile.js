@@ -16,9 +16,6 @@ gulp.task('fetch-goodreads', function (cb) {
   const xml2js = require('xml2js');
   let totalPages = 1;
 
-
-
-
   const getRequest = new Promise((resolve, reject) => {
     let parser = new xml2js.Parser();
     let tmp = [];
@@ -43,7 +40,7 @@ gulp.task('fetch-goodreads', function (cb) {
       currentPage++;
       getRequest.then(handleResponse);
     } else {
-      cleanedBooks.pu
+      // cleanedBooks.pu
 
 
       fs.writeFile('_data/books.json', JSON.stringify(books), function (error) {
