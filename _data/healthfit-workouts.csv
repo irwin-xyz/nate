@@ -1,0 +1,594 @@
+name,type,start_date,distance_m,moving_time,elevation_gain_m
+Outdoor Running,Outdoor Running,2026-06-04T23:16:46.000Z,3495,1166,70
+Outdoor Cycling,Outdoor Cycling,2026-06-04T02:08:39.000Z,6843,2135,43
+Outdoor Cycling,Outdoor Cycling,2026-06-04T00:57:02.000Z,247,114,6
+Outdoor Cycling,Outdoor Cycling,2026-06-04T00:01:36.000Z,6104,1161,13
+Outdoor Running,Outdoor Running,2026-06-01T23:45:08.000Z,2572,837,25
+Outdoor Walking,Outdoor Walking,2026-05-19T21:51:05.000Z,440,346,12
+Outdoor Running,Outdoor Running,2026-05-19T21:28:43.000Z,3350,1308,81
+Outdoor Running,Outdoor Running,2026-05-17T13:59:38.000Z,3245,1075,79
+Outdoor Walking,Outdoor Walking,2026-05-13T12:32:51.000Z,1468,1766,8
+Golf,Golf,2026-05-12T07:59:33.000Z,0,10871,0
+Outdoor Walking,Outdoor Walking,2026-05-10T10:21:37.000Z,6053,6494,119
+Golf,Golf,2026-05-08T13:35:27.000Z,0,15470,0
+Golf,Golf,2026-05-05T16:39:41.000Z,0,15529,0
+Golf,Golf,2026-05-04T20:10:12.000Z,0,14647,0
+Golf,Golf,2026-05-03T18:41:58.000Z,0,19710,0
+Golf,Golf,2026-05-03T18:38:52.000Z,0,178,0
+Golf,Golf,2026-05-03T00:14:04.000Z,0,9430,0
+Golf,Golf,2026-05-02T21:52:59.000Z,0,1614,0
+Golf,Golf,2026-05-02T17:42:42.000Z,0,6861,0
+Golf,Golf,2026-05-02T17:39:28.000Z,0,189,0
+Golf,Golf,2026-05-01T18:03:05.000Z,0,14990,0
+Golf,Golf,2026-05-01T18:00:28.000Z,0,153,0
+Golf,Golf,2026-04-29T02:31:22.000Z,0,1104,0
+Golf,Golf,2026-04-29T02:17:53.000Z,0,803,0
+Golf,Golf,2026-04-29T02:11:30.000Z,0,378,0
+Golf,Golf,2026-04-29T01:53:14.000Z,0,800,0
+Golf,Golf,2026-04-29T01:44:23.000Z,0,526,0
+Golf,Golf,2026-04-29T01:42:25.000Z,0,114,0
+Golf,Golf,2026-04-29T01:25:59.000Z,0,980,0
+Golf,Golf,2026-04-29T01:22:11.000Z,0,224,0
+Golf,Golf,2026-04-29T01:07:21.000Z,0,883,0
+Golf,Golf,2026-04-29T01:02:00.000Z,0,315,0
+Golf,Golf,2026-04-29T00:59:54.000Z,0,122,0
+Golf,Golf,2026-04-29T00:53:00.000Z,0,408,0
+Golf,Golf,2026-04-29T00:19:35.000Z,0,1095,0
+Golf,Golf,2026-04-29T00:03:27.000Z,0,900,0
+Golf,Golf,2026-04-28T22:17:14.000Z,0,6331,0
+Golf,Golf,2026-04-28T22:15:51.000Z,0,79,0
+Outdoor Running,Outdoor Running,2026-04-28T14:43:16.000Z,8452,3200,61
+Golf,Golf,2026-04-27T17:41:24.000Z,0,13694,0
+Indoor Running,Indoor Running,2026-04-26T15:59:55.000Z,3039,1245,0
+Indoor Running,Indoor Running,2026-04-24T19:23:54.000Z,3171,1233,0
+Indoor Running,Indoor Running,2026-04-23T19:52:43.000Z,3054,900,0
+Outdoor Running,Outdoor Running,2026-04-22T20:27:58.000Z,4865,2024,134
+Outdoor Walking,Outdoor Walking,2026-04-21T22:37:03.000Z,3073,2550,83
+Outdoor Running,Outdoor Running,2026-04-16T22:20:56.000Z,3380,1287,82
+Outdoor Running,Outdoor Running,2026-04-14T21:54:31.000Z,5004,1769,144
+Outdoor Cycling,Outdoor Cycling,2026-04-12T17:19:25.000Z,3164,781,41
+Outdoor Cycling,Outdoor Cycling,2026-04-12T16:21:35.000Z,2836,1103,30
+Outdoor Cycling,Outdoor Cycling,2026-04-11T23:42:39.000Z,2308,563,39
+Outdoor Cycling,Outdoor Cycling,2026-04-11T22:37:11.000Z,2395,718,9
+Indoor Running,Indoor Running,2026-04-11T20:50:03.000Z,3700,1200,23
+Golf,Golf,2026-04-10T13:10:56.000Z,0,16482,0
+Outdoor Running,Outdoor Running,2026-04-08T21:55:24.000Z,5012,1799,155
+Indoor Running,Indoor Running,2026-04-06T18:46:54.000Z,2745,901,11
+Outdoor Walking,Outdoor Walking,2026-04-02T20:56:42.000Z,1360,1178,22
+Outdoor Walking,Outdoor Walking,2026-04-02T20:35:55.000Z,1393,1041,62
+Outdoor Walking,Outdoor Walking,2026-03-29T02:39:28.000Z,1420,1266,13
+Outdoor Walking,Outdoor Walking,2026-03-28T23:58:28.000Z,1326,1440,54
+Outdoor Running,Outdoor Running,2026-03-20T00:37:37.000Z,2372,731,13
+Outdoor Running,Outdoor Running,2026-03-17T20:46:30.000Z,3205,1049,40
+Downhill Skiing,Downhill Skiing,2026-03-15T17:35:52.000Z,19536,1828,2071
+Outdoor Running,Outdoor Running,2026-03-11T22:22:11.000Z,3037,951,38
+Outdoor Walking,Outdoor Walking,2026-03-11T21:03:44.000Z,1008,923,13
+Outdoor Walking,Outdoor Walking,2026-03-11T00:52:32.000Z,1198,1231,20
+Downhill Skiing,Downhill Skiing,2026-03-08T17:58:08.000Z,10321,917,1186
+Outdoor Walking,Outdoor Walking,2026-03-05T22:14:46.000Z,2677,2429,43
+Downhill Skiing,Downhill Skiing,2026-03-03T18:40:22.000Z,21092,2494,2242
+Outdoor Walking,Outdoor Walking,2026-03-02T23:51:49.000Z,462,361,8
+Outdoor Running,Outdoor Running,2026-03-02T23:40:25.000Z,2107,676,13
+Outdoor Walking,Outdoor Walking,2026-03-02T00:55:44.000Z,1130,1562,45
+Outdoor Walking,Outdoor Walking,2026-03-01T22:00:28.000Z,1335,1166,12
+Downhill Skiing,Downhill Skiing,2026-03-01T18:45:29.000Z,18540,2833,1981
+Outdoor Walking,Outdoor Walking,2026-03-01T18:10:59.000Z,1304,963,46
+Downhill Skiing,Downhill Skiing,2026-02-26T21:17:03.000Z,16974,1838,1888
+Outdoor Walking,Outdoor Walking,2026-02-24T20:26:11.000Z,673,490,11
+Outdoor Running,Outdoor Running,2026-02-24T20:17:38.000Z,1618,501,8
+Outdoor Walking,Outdoor Walking,2026-02-22T23:26:27.000Z,478,392,11
+Outdoor Running,Outdoor Running,2026-02-22T23:17:22.000Z,1659,499,9
+Downhill Skiing,Downhill Skiing,2026-02-22T17:35:11.000Z,23902,2652,2800
+Outdoor Walking,Outdoor Walking,2026-02-18T03:00:58.000Z,1677,1672,10
+Outdoor Walking,Outdoor Walking,2026-02-18T00:13:37.000Z,610,652,48
+Outdoor Running,Outdoor Running,2026-02-09T22:47:01.000Z,2363,742,24
+Outdoor Walking,Outdoor Walking,2026-02-05T17:50:29.000Z,1335,1533,14
+Outdoor Walking,Outdoor Walking,2026-02-05T01:06:29.000Z,5662,4785,77
+Outdoor Walking,Outdoor Walking,2026-02-04T18:24:45.000Z,2326,2113,52
+Outdoor Walking,Outdoor Walking,2026-02-04T17:27:38.000Z,1408,1131,1
+Outdoor Walking,Outdoor Walking,2026-02-02T23:02:09.000Z,1890,1428,18
+Downhill Skiing,Downhill Skiing,2026-01-31T17:42:46.000Z,19359,3135,1931
+Downhill Skiing,Downhill Skiing,2026-01-24T17:12:15.000Z,24296,3917,3028
+Outdoor Walking,Outdoor Walking,2026-01-22T22:04:37.000Z,4351,4173,65
+Downhill Skiing,Downhill Skiing,2026-01-19T17:14:37.000Z,20044,1896,1744
+Outdoor Walking,Outdoor Walking,2026-01-17T23:17:36.000Z,795,645,21
+Outdoor Walking,Outdoor Walking,2026-01-15T01:03:59.000Z,1432,1282,14
+Indoor Running,Indoor Running,2026-01-12T22:59:43.000Z,3557,1222,0
+Outdoor Walking,Outdoor Walking,2026-01-10T22:23:13.000Z,3340,1955,38
+Downhill Skiing,Downhill Skiing,2026-01-10T14:48:20.000Z,3651,2677,188
+Downhill Skiing,Downhill Skiing,2026-01-09T16:54:50.000Z,18494,2435,2279
+Downhill Skiing,Downhill Skiing,2026-01-08T20:29:38.000Z,17874,4505,2167
+Outdoor Running,Outdoor Running,2026-01-07T22:37:30.000Z,2327,744,18
+Downhill Skiing,Downhill Skiing,2026-01-06T15:38:10.000Z,21495,2836,2453
+Downhill Skiing,Downhill Skiing,2026-01-03T18:56:30.000Z,13047,2995,1013
+Downhill Skiing,Downhill Skiing,2026-01-02T19:50:21.000Z,24382,4851,2958
+Downhill Skiing,Downhill Skiing,2025-12-31T19:46:33.000Z,21350,3544,2367
+Downhill Skiing,Downhill Skiing,2025-12-30T20:40:02.000Z,5506,1358,671
+Outdoor Walking,Outdoor Walking,2025-12-29T21:31:57.000Z,1441,1410,10
+Downhill Skiing,Downhill Skiing,2025-12-29T19:19:38.000Z,26755,2322,3066
+Outdoor Walking,Outdoor Walking,2025-12-28T20:29:11.000Z,1486,1659,26
+Outdoor Walking,Outdoor Walking,2025-12-28T19:36:56.000Z,1409,1350,52
+Outdoor Running,Outdoor Running,2025-12-22T20:00:25.000Z,6054,2423,166
+Outdoor Running,Outdoor Running,2025-12-19T19:57:57.000Z,3334,1059,46
+Indoor Running,Indoor Running,2025-12-17T22:38:48.000Z,4060,1200,16
+Indoor Running,Indoor Running,2025-12-15T20:11:53.000Z,3852,1200,21
+Indoor Running,Indoor Running,2025-12-14T20:11:17.000Z,3011,900,12
+Indoor Running,Indoor Running,2025-12-11T21:17:27.000Z,3662,1200,14
+Indoor Running,Indoor Running,2025-12-10T22:21:45.000Z,3615,1200,18
+Indoor Running,Indoor Running,2025-12-03T22:24:34.000Z,3687,1200,28
+Indoor Running,Indoor Running,2025-12-02T23:59:27.000Z,2573,900,10
+Indoor Running,Indoor Running,2025-12-01T21:53:32.000Z,5518,1800,29
+Indoor Running,Indoor Running,2025-11-26T21:18:54.000Z,3698,1200,15
+Outdoor Running,Outdoor Running,2025-11-24T20:44:26.000Z,4954,1804,149
+Outdoor Walking,Outdoor Walking,2025-11-23T19:09:09.000Z,8228,6876,251
+Outdoor Running,Outdoor Running,2025-11-19T19:18:35.000Z,5031,1851,134
+Indoor Running,Indoor Running,2025-11-17T22:02:17.000Z,3040,901,12
+Outdoor Walking,Outdoor Walking,2025-11-16T16:51:02.000Z,4761,4082,147
+Outdoor Walking,Outdoor Walking,2025-11-14T21:06:16.000Z,3635,1329,78
+Indoor Running,Indoor Running,2025-11-11T21:59:56.000Z,3014,1252,0
+Outdoor Walking,Outdoor Walking,2025-11-08T19:15:26.000Z,5137,4314,174
+Outdoor Running,Outdoor Running,2025-11-07T19:50:52.000Z,3817,1473,103
+Outdoor Running,Outdoor Running,2025-11-05T19:47:11.000Z,4972,1803,150
+Outdoor Running,Outdoor Running,2025-11-04T20:24:39.000Z,451,390,22
+Outdoor Running,Outdoor Running,2025-11-04T20:02:56.000Z,3328,1290,89
+Indoor Running,Indoor Running,2025-11-03T23:11:02.000Z,2785,900,19
+Outdoor Running,Outdoor Running,2025-11-01T19:57:47.000Z,4999,1833,156
+Indoor Running,Indoor Running,2025-10-29T19:19:56.000Z,2432,901,23
+Indoor Running,Indoor Running,2025-10-26T20:23:06.000Z,3649,1201,14
+Outdoor Running,Outdoor Running,2025-10-25T21:03:24.000Z,4949,1737,152
+Indoor Running,Indoor Running,2025-10-23T22:30:06.000Z,317,175,1
+Outdoor Walking,Outdoor Walking,2025-10-23T21:03:36.000Z,5492,4206,173
+Outdoor Running,Outdoor Running,2025-10-22T20:03:13.000Z,2945,984,85
+Outdoor Running,Outdoor Running,2025-10-14T22:26:32.000Z,4429,1442,62
+Outdoor Running,Outdoor Running,2025-10-08T23:51:20.000Z,3880,1222,41
+Outdoor Walking,Outdoor Walking,2025-10-07T00:02:24.000Z,1294,992,44
+Outdoor Running,Outdoor Running,2025-10-06T23:06:44.000Z,3202,981,13
+Outdoor Cycling,Outdoor Cycling,2025-10-05T00:48:43.000Z,1997,642,13
+Outdoor Walking,Outdoor Walking,2025-10-04T21:19:46.000Z,1404,1259,8
+Outdoor Walking,Outdoor Walking,2025-10-04T18:59:06.000Z,1637,1522,62
+Outdoor Running,Outdoor Running,2025-09-30T23:20:28.000Z,3607,1138,27
+Outdoor Running,Outdoor Running,2025-09-29T23:54:33.000Z,3173,1020,39
+Outdoor Running,Outdoor Running,2025-09-26T22:38:33.000Z,3578,1158,62
+Outdoor Running,Outdoor Running,2025-09-24T22:31:42.000Z,4847,1564,70
+Outdoor Running,Outdoor Running,2025-09-23T23:20:59.000Z,2444,768,23
+Outdoor Running,Outdoor Running,2025-09-23T00:12:35.000Z,3502,1173,64
+Golf,Golf,2025-09-19T18:44:31.000Z,0,16222,0
+Outdoor Walking,Outdoor Walking,2025-09-14T18:57:11.000Z,254,546,20
+Outdoor Walking,Outdoor Walking,2025-09-14T17:49:04.000Z,926,935,2
+Outdoor Running,Outdoor Running,2025-09-11T00:33:57.000Z,4425,1430,46
+Outdoor Running,Outdoor Running,2025-09-09T23:55:09.000Z,3460,1140,55
+Outdoor Cycling,Outdoor Cycling,2025-09-08T00:43:22.000Z,5190,1025,18
+Outdoor Cycling,Outdoor Cycling,2025-09-07T23:00:26.000Z,5340,1035,10
+Golf,Golf,2025-09-07T17:35:42.000Z,0,6107,0
+Golf,Golf,2025-09-07T17:34:15.000Z,0,88,0
+Golf,Golf,2025-09-07T17:20:16.000Z,0,838,0
+Outdoor Walking,Outdoor Walking,2025-09-06T18:58:33.000Z,1105,816,29
+Golf,Golf,2025-09-05T15:59:23.000Z,0,15274,0
+Outdoor Walking,Outdoor Walking,2025-09-03T23:27:59.000Z,494,464,3
+Outdoor Running,Outdoor Running,2025-09-03T23:08:05.000Z,3629,1170,17
+Outdoor Walking,Outdoor Walking,2025-09-03T18:54:52.000Z,2076,2009,17
+Outdoor Walking,Outdoor Walking,2025-09-03T02:28:01.000Z,1251,928,4
+Outdoor Walking,Outdoor Walking,2025-09-03T00:22:45.000Z,1057,835,28
+Outdoor Walking,Outdoor Walking,2025-09-02T22:00:56.000Z,1262,920,13
+Indoor Running,Indoor Running,2025-09-02T21:30:50.000Z,3557,1249,0
+Strength Training,Strength Training,2025-09-02T21:15:04.000Z,0,653,0
+Outdoor Walking,Outdoor Walking,2025-09-02T19:00:05.000Z,1373,1094,39
+Outdoor Walking,Outdoor Walking,2025-09-01T19:36:08.000Z,331,260,4
+Outdoor Running,Outdoor Running,2025-09-01T19:12:05.000Z,4500,1420,31
+Outdoor Cycling,Outdoor Cycling,2025-09-01T03:10:13.000Z,5893,1449,25
+Outdoor Cycling,Outdoor Cycling,2025-09-01T00:33:30.000Z,7304,1670,11
+Outdoor Running,Outdoor Running,2025-08-28T23:00:00.000Z,3338,1115,64
+Outdoor Walking,Outdoor Walking,2025-08-28T21:06:00.000Z,2760,2344,30
+Outdoor Running,Outdoor Running,2025-08-27T00:10:37.000Z,3438,1068,17
+Outdoor Running,Outdoor Running,2025-08-24T23:52:26.000Z,3684,1145,50
+Outdoor Running,Outdoor Running,2025-08-23T23:47:58.000Z,3556,1071,33
+Outdoor Running,Outdoor Running,2025-08-22T22:54:16.000Z,3698,1147,25
+Outdoor Running,Outdoor Running,2025-08-21T23:22:45.000Z,3097,971,12
+Outdoor Cycling,Outdoor Cycling,2025-08-19T00:48:30.000Z,2001,518,13
+Outdoor Cycling,Outdoor Cycling,2025-08-19T00:37:41.000Z,1907,408,12
+Outdoor Walking,Outdoor Walking,2025-08-17T02:58:27.000Z,1708,1263,7
+Outdoor Walking,Outdoor Walking,2025-08-17T00:38:00.000Z,1323,1311,43
+Outdoor Running,Outdoor Running,2025-08-16T22:12:13.000Z,3341,1089,61
+Outdoor Cycling,Outdoor Cycling,2025-08-15T02:41:06.000Z,6104,1294,25
+Outdoor Cycling,Outdoor Cycling,2025-08-15T00:38:41.000Z,5865,1345,3
+Hiking,Hiking,2025-08-12T15:29:23.000Z,3822,6709,152
+Outdoor Cycling,Outdoor Cycling,2025-08-10T00:45:55.000Z,1550,510,49
+Outdoor Walking,Outdoor Walking,2025-08-09T23:23:59.000Z,295,223,9
+Outdoor Running,Outdoor Running,2025-08-09T22:59:40.000Z,4328,1428,70
+Outdoor Cycling,Outdoor Cycling,2025-08-09T18:09:32.000Z,5479,1279,32
+Outdoor Cycling,Outdoor Cycling,2025-08-09T17:05:21.000Z,5409,1077,7
+Hiking,Hiking,2025-08-08T15:48:28.000Z,1994,2003,30
+Outdoor Running,Outdoor Running,2025-08-07T20:09:05.000Z,2573,795,10
+Outdoor Running,Outdoor Running,2025-08-06T16:08:09.000Z,3788,1251,48
+Outdoor Cycling,Outdoor Cycling,2025-08-04T03:11:45.000Z,2593,771,7
+Outdoor Cycling,Outdoor Cycling,2025-08-04T00:45:25.000Z,1204,343,8
+Golf,Golf,2025-08-03T19:56:12.000Z,0,12240,0
+Golf,Golf,2025-08-03T19:46:47.000Z,0,84,0
+Golf,Golf,2025-08-03T18:47:10.000Z,0,3577,0
+Hiking,Hiking,2025-08-02T22:33:03.000Z,5437,6604,287
+Outdoor Cycling,Outdoor Cycling,2025-08-02T02:29:45.000Z,1951,599,13
+Outdoor Cycling,Outdoor Cycling,2025-08-02T01:32:20.000Z,1954,548,48
+Outdoor Running,Outdoor Running,2025-07-31T23:20:54.000Z,3440,1047,10
+Outdoor Cycling,Outdoor Cycling,2025-07-28T00:08:29.000Z,2151,563,14
+Outdoor Cycling,Outdoor Cycling,2025-07-26T17:09:58.000Z,5560,1113,25
+Outdoor Cycling,Outdoor Cycling,2025-07-26T15:52:20.000Z,5861,1372,11
+Outdoor Cycling,Outdoor Cycling,2025-07-26T00:54:40.000Z,5890,1368,24
+Outdoor Cycling,Outdoor Cycling,2025-07-25T23:49:41.000Z,3202,717,11
+Outdoor Cycling,Outdoor Cycling,2025-07-25T22:02:22.000Z,9836,1706,19
+Outdoor Cycling,Outdoor Cycling,2025-07-25T19:14:02.000Z,1285,382,32
+Outdoor Walking,Outdoor Walking,2025-07-25T00:15:00.000Z,522,629,8
+Outdoor Running,Outdoor Running,2025-07-24T23:55:00.000Z,3751,1196,40
+Outdoor Running,Outdoor Running,2025-07-22T21:28:25.000Z,2718,831,11
+Outdoor Walking,Outdoor Walking,2025-07-21T15:05:52.000Z,1103,861,33
+Outdoor Cycling,Outdoor Cycling,2025-07-21T01:41:25.000Z,5250,1103,16
+Outdoor Cycling,Outdoor Cycling,2025-07-21T00:22:44.000Z,5316,1405,6
+Outdoor Cycling,Outdoor Cycling,2025-07-20T20:41:00.000Z,6045,1167,28
+Outdoor Cycling,Outdoor Cycling,2025-07-20T19:02:08.000Z,6137,1472,7
+Outdoor Walking,Outdoor Walking,2025-07-20T02:06:56.000Z,1171,1432,7
+Outdoor Walking,Outdoor Walking,2025-07-20T00:53:55.000Z,1582,1582,39
+Outdoor Walking,Outdoor Walking,2025-07-19T23:44:34.000Z,2828,2792,45
+Outdoor Cycling,Outdoor Cycling,2025-07-19T18:18:16.000Z,5637,966,24
+Outdoor Cycling,Outdoor Cycling,2025-07-18T22:33:06.000Z,12734,2799,32
+Outdoor Walking,Outdoor Walking,2025-07-17T00:06:01.000Z,1650,1205,5
+Outdoor Running,Outdoor Running,2025-07-16T23:57:22.000Z,1643,513,14
+Outdoor Cycling,Outdoor Cycling,2025-07-14T19:06:38.000Z,3619,918,19
+Golf,Golf,2025-07-12T13:39:46.000Z,0,16787,0
+Indoor Running,Indoor Running,2025-07-08T21:33:57.000Z,2782,900,11
+Indoor Running,Indoor Running,2025-07-03T20:26:09.000Z,2827,900,25
+Outdoor Walking,Outdoor Walking,2025-07-02T21:14:40.000Z,109,95,7
+Outdoor Running,Outdoor Running,2025-07-02T20:57:24.000Z,3236,1030,39
+Outdoor Running,Outdoor Running,2025-07-01T19:18:03.000Z,12,496,36
+Golf,Golf,2025-06-27T18:08:06.000Z,0,26051,0
+Golf,Golf,2025-06-27T16:30:14.000Z,0,5871,0
+Indoor Running,Indoor Running,2025-06-25T17:59:31.000Z,2776,900,36
+Indoor Running,Indoor Running,2025-06-24T20:57:38.000Z,3957,1201,16
+Outdoor Running,Outdoor Running,2025-06-23T21:49:31.000Z,4097,1573,82
+Outdoor Running,Outdoor Running,2025-06-22T19:36:44.000Z,2478,975,41
+Outdoor Running,Outdoor Running,2025-06-17T19:17:40.000Z,4956,1859,143
+Indoor Running,Indoor Running,2025-06-16T18:40:32.000Z,3662,1200,14
+Outdoor Running,Outdoor Running,2025-06-15T16:53:27.000Z,3904,1473,88
+Indoor Running,Indoor Running,2025-06-13T20:20:07.000Z,2976,900,12
+Golf,Golf,2025-06-13T11:08:48.000Z,0,7386,0
+Outdoor Running,Outdoor Running,2025-06-11T20:30:31.000Z,4610,1857,112
+Indoor Running,Indoor Running,2025-06-10T22:23:53.000Z,3281,1226,0
+Outdoor Running,Outdoor Running,2025-06-09T21:08:05.000Z,3350,1056,49
+Outdoor Walking,Outdoor Walking,2025-06-07T19:23:46.000Z,1696,603,44
+Outdoor Running,Outdoor Running,2025-06-07T19:05:11.000Z,3347,1083,45
+Outdoor Walking,Outdoor Walking,2025-06-04T21:03:45.000Z,500,387,12
+Outdoor Running,Outdoor Running,2025-06-04T20:29:46.000Z,4621,1722,111
+Outdoor Running,Outdoor Running,2025-06-02T18:04:27.000Z,4957,1804,140
+Indoor Running,Indoor Running,2025-05-29T20:58:54.000Z,3749,1200,25
+Outdoor Running,Outdoor Running,2025-05-28T20:59:15.000Z,2739,889,36
+Indoor Running,Indoor Running,2025-05-27T18:34:19.000Z,2824,901,25
+Outdoor Walking,Outdoor Walking,2025-05-25T18:06:17.000Z,515,678,13
+Outdoor Running,Outdoor Running,2025-05-25T17:35:14.000Z,4659,1696,113
+Outdoor Walking,Outdoor Walking,2025-05-23T20:41:55.000Z,489,400,12
+Outdoor Running,Outdoor Running,2025-05-23T20:24:10.000Z,3359,1049,49
+Hiking,Hiking,2025-05-20T20:47:40.000Z,491,405,14
+Outdoor Running,Outdoor Running,2025-05-20T20:27:04.000Z,3340,1077,47
+Hiking,Hiking,2025-05-17T21:17:14.000Z,3735,4470,114
+Golf,Golf,2025-05-09T18:52:29.000Z,0,14751,0
+Indoor Running,Indoor Running,2025-05-05T21:24:37.000Z,3732,1200,0
+Indoor Running,Indoor Running,2025-05-04T16:41:52.000Z,3001,901,0
+Indoor Running,Indoor Running,2025-05-02T17:01:18.000Z,2639,900,0
+Indoor Running,Indoor Running,2025-05-01T16:58:20.000Z,3706,1201,0
+Outdoor Running,Outdoor Running,2025-04-29T20:56:05.000Z,4920,1787,141
+Outdoor Walking,Outdoor Walking,2025-04-28T20:49:58.000Z,587,445,12
+Outdoor Running,Outdoor Running,2025-04-28T20:16:57.000Z,4865,1851,106
+Hiking,Hiking,2025-04-27T17:33:36.000Z,5135,4419,140
+Indoor Running,Indoor Running,2025-04-26T18:54:09.000Z,3660,1201,0
+Indoor Running,Indoor Running,2025-04-22T20:28:41.000Z,3459,1200,0
+Outdoor Running,Outdoor Running,2025-04-21T21:17:31.000Z,3346,1127,42
+Hiking,Hiking,2025-04-20T20:46:04.000Z,5917,4896,143
+Indoor Running,Indoor Running,2025-04-10T20:50:00.000Z,3779,1201,0
+Outdoor Running,Outdoor Running,2025-04-08T20:46:14.000Z,4950,1788,146
+Indoor Running,Indoor Running,2025-04-07T21:08:27.000Z,3831,1200,0
+Indoor Running,Indoor Running,2025-04-06T20:32:14.000Z,5805,1800,0
+Indoor Running,Indoor Running,2025-04-05T20:46:10.000Z,2308,925,0
+Indoor Running,Indoor Running,2025-04-02T19:32:35.000Z,5163,1801,0
+Indoor Running,Indoor Running,2025-04-01T19:13:09.000Z,3651,1200,0
+Indoor Running,Indoor Running,2025-03-31T20:55:12.000Z,2897,1258,0
+Downhill Skiing,Downhill Skiing,2025-03-27T18:06:40.000Z,23048,1895,2582
+Downhill Skiing,Downhill Skiing,2025-03-25T17:35:16.000Z,26985,2174,3212
+Downhill Skiing,Downhill Skiing,2025-03-24T18:29:47.000Z,15954,1514,1455
+Downhill Skiing,Downhill Skiing,2025-03-23T15:42:04.000Z,47246,6092,4504
+Outdoor Running,Outdoor Running,2025-03-21T19:52:22.000Z,4524,1757,96
+Indoor Running,Indoor Running,2025-03-19T20:02:41.000Z,3219,1200,0
+Outdoor Running,Outdoor Running,2025-03-18T20:48:53.000Z,5567,2177,134
+Indoor Running,Indoor Running,2025-03-17T20:04:59.000Z,4579,1856,0
+Indoor Running,Indoor Running,2025-03-15T16:28:22.000Z,3653,1200,0
+Indoor Running,Indoor Running,2025-03-13T19:27:18.000Z,3648,1201,0
+Outdoor Running,Outdoor Running,2025-03-12T20:36:10.000Z,3720,1427,82
+Outdoor Running,Outdoor Running,2025-03-10T20:51:15.000Z,4907,1750,138
+Indoor Running,Indoor Running,2025-03-09T19:34:03.000Z,2895,900,0
+Hiking,Hiking,2025-03-08T19:01:59.000Z,3987,3942,92
+Indoor Running,Indoor Running,2025-03-07T20:52:40.000Z,3765,1200,0
+Indoor Running,Indoor Running,2025-03-06T21:08:57.000Z,3775,1207,0
+Indoor Running,Indoor Running,2025-03-04T22:03:31.000Z,1860,764,0
+Outdoor Running,Outdoor Running,2025-03-03T22:36:14.000Z,4964,1757,143
+Outdoor Walking,Outdoor Walking,2025-03-02T18:07:44.000Z,3685,3502,114
+Outdoor Running,Outdoor Running,2025-02-28T20:44:29.000Z,5731,2200,135
+Indoor Running,Indoor Running,2025-02-27T22:26:12.000Z,3596,1200,0
+Outdoor Running,Outdoor Running,2025-02-25T20:01:15.000Z,4919,1744,141
+Indoor Running,Indoor Running,2025-02-24T22:30:50.000Z,3784,1200,0
+Indoor Running,Indoor Running,2025-02-21T20:43:03.000Z,5038,1874,0
+Indoor Running,Indoor Running,2025-02-19T19:25:42.000Z,3864,1200,0
+Indoor Running,Indoor Running,2025-02-18T21:29:19.000Z,3035,900,0
+Indoor Running,Indoor Running,2025-02-16T19:01:50.000Z,5175,1800,0
+Indoor Running,Indoor Running,2025-02-15T21:55:43.000Z,5412,1800,0
+Indoor Running,Indoor Running,2025-02-13T18:33:10.000Z,3628,1201,0
+Indoor Running,Indoor Running,2025-02-11T21:59:30.000Z,4094,1200,0
+Indoor Running,Indoor Running,2025-02-10T23:19:09.000Z,463,221,0
+Indoor Running,Indoor Running,2025-02-10T22:56:07.000Z,3236,1260,0
+Outdoor Running,Outdoor Running,2025-02-08T20:46:58.000Z,1045,360,26
+Outdoor Walking,Outdoor Walking,2025-02-08T20:41:57.000Z,404,294,7
+Outdoor Running,Outdoor Running,2025-02-08T20:23:34.000Z,3216,1094,40
+Indoor Running,Indoor Running,2025-02-06T17:29:50.000Z,3503,1201,0
+Indoor Running,Indoor Running,2025-02-04T23:44:22.000Z,3651,1201,0
+Outdoor Running,Outdoor Running,2025-02-03T20:14:26.000Z,4197,1544,65
+Downhill Skiing,Downhill Skiing,2025-02-01T15:35:38.000Z,29950,3296,3471
+Downhill Skiing,Downhill Skiing,2025-01-31T18:12:04.000Z,29692,5611,3067
+Indoor Running,Indoor Running,2025-01-28T19:08:55.000Z,3833,1201,0
+Indoor Running,Indoor Running,2025-01-27T21:07:22.000Z,3781,1200,0
+Indoor Running,Indoor Running,2025-01-26T20:55:47.000Z,3582,1200,0
+Outdoor Walking,Outdoor Walking,2025-01-26T18:32:44.000Z,3109,3730,77
+Indoor Running,Indoor Running,2025-01-24T21:50:42.000Z,1006,374,0
+Indoor Running,Indoor Running,2025-01-22T21:27:42.000Z,3062,1212,0
+Downhill Skiing,Downhill Skiing,2025-01-18T20:31:55.000Z,8337,1068,922
+Downhill Skiing,Downhill Skiing,2025-01-17T18:10:06.000Z,32183,6654,3673
+Downhill Skiing,Downhill Skiing,2025-01-16T22:41:03.000Z,4781,515,701
+Downhill Skiing,Downhill Skiing,2025-01-16T18:10:52.000Z,12617,1468,1379
+Downhill Skiing,Downhill Skiing,2025-01-15T18:52:34.000Z,23649,2103,3564
+Downhill Skiing,Downhill Skiing,2025-01-14T17:36:37.000Z,20011,1813,3057
+Downhill Skiing,Downhill Skiing,2025-01-13T17:22:50.000Z,29434,4484,4224
+Downhill Skiing,Downhill Skiing,2025-01-12T18:14:35.000Z,41111,7704,5390
+Indoor Running,Indoor Running,2025-01-10T22:59:44.000Z,2860,901,0
+Indoor Running,Indoor Running,2025-01-09T18:28:22.000Z,3712,1201,0
+Indoor Running,Indoor Running,2025-01-07T22:19:52.000Z,3839,1200,0
+Indoor Running,Indoor Running,2025-01-06T21:30:58.000Z,3260,1201,0
+Indoor Running,Indoor Running,2025-01-04T20:31:42.000Z,5426,1801,0
+Indoor Running,Indoor Running,2025-01-02T20:29:12.000Z,3294,1216,0
+Outdoor Running,Outdoor Running,2024-12-30T20:17:30.000Z,3349,1006,48
+Indoor Running,Indoor Running,2024-12-29T20:25:55.000Z,3623,1201,0
+Outdoor Running,Outdoor Running,2024-12-28T19:46:45.000Z,3333,1014,42
+Indoor Running,Indoor Running,2024-12-19T21:13:57.000Z,3663,1200,0
+Indoor Running,Indoor Running,2024-12-18T21:51:10.000Z,4127,1200,0
+Indoor Running,Indoor Running,2024-12-18T21:50:46.000Z,3917,6697,0
+Outdoor Running,Outdoor Running,2024-12-17T19:21:49.000Z,3338,1038,42
+Indoor Running,Indoor Running,2024-12-16T22:13:10.000Z,3853,1201,0
+Indoor Running,Indoor Running,2024-12-13T21:06:09.000Z,3771,1200,0
+Indoor Running,Indoor Running,2024-12-12T21:59:07.000Z,4016,1201,0
+Indoor Running,Indoor Running,2024-12-10T22:26:48.000Z,3860,1200,0
+Indoor Running,Indoor Running,2024-12-09T21:40:16.000Z,5992,1801,0
+Indoor Running,Indoor Running,2024-12-07T16:49:04.000Z,4014,1200,0
+Indoor Running,Indoor Running,2024-12-05T20:16:31.000Z,4093,1200,0
+Indoor Running,Indoor Running,2024-12-03T21:03:21.000Z,5624,1800,0
+Indoor Running,Indoor Running,2024-12-02T18:46:48.000Z,3704,1201,0
+Indoor Running,Indoor Running,2024-12-01T22:30:04.000Z,3445,1200,0
+Indoor Running,Indoor Running,2024-11-26T22:16:59.000Z,5350,1868,0
+Open Water Swim,Open Water Swim,2024-11-25T02:11:46.000Z,97,1556,0
+Open Water Swim,Open Water Swim,2024-11-24T20:42:49.000Z,218,3363,0
+Hiking,Hiking,2024-11-24T18:41:40.000Z,3390,3692,210
+Outdoor Walking,Outdoor Walking,2024-11-21T21:13:45.000Z,1502,1470,36
+Indoor Running,Indoor Running,2024-11-20T18:35:25.000Z,3900,1207,0
+Outdoor Walking,Outdoor Walking,2024-11-19T01:51:57.000Z,1363,1195,6
+Indoor Running,Indoor Running,2024-11-18T16:58:07.000Z,3508,1214,0
+Indoor Running,Indoor Running,2024-11-18T16:35:07.000Z,3750,1232,0
+Outdoor Walking,Outdoor Walking,2024-11-16T21:29:25.000Z,1108,1508,24
+Outdoor Cycling,Outdoor Cycling,2024-11-15T00:04:04.000Z,2674,3232,119
+Outdoor Running,Outdoor Running,2024-11-14T17:21:28.000Z,3591,1154,30
+Hiking,Hiking,2024-11-14T00:45:12.000Z,666,1354,21
+Hiking,Hiking,2024-11-13T01:24:42.000Z,2688,5739,144
+Indoor Running,Indoor Running,2024-11-10T18:49:54.000Z,5477,1801,0
+Indoor Running,Indoor Running,2024-11-07T18:47:33.000Z,8150,2700,0
+Outdoor Running,Outdoor Running,2024-11-05T20:05:31.000Z,6122,2433,132
+Indoor Running,Indoor Running,2024-11-04T22:45:20.000Z,3434,1200,0
+Outdoor Running,Outdoor Running,2024-11-04T21:26:21.000Z,4859,1766,105
+Indoor Running,Indoor Running,2024-11-01T20:00:49.000Z,3854,1207,0
+Indoor Running,Indoor Running,2024-10-31T20:24:39.000Z,3777,1201,0
+Outdoor Running,Outdoor Running,2024-10-30T16:59:20.000Z,5643,2052,120
+Outdoor Running,Outdoor Running,2024-10-29T20:37:06.000Z,4972,1794,144
+Indoor Running,Indoor Running,2024-10-28T20:52:25.000Z,5473,1801,0
+Indoor Running,Indoor Running,2024-10-26T17:33:22.000Z,3821,1200,0
+Indoor Running,Indoor Running,2024-10-25T16:00:18.000Z,3788,1201,0
+Indoor Running,Indoor Running,2024-10-24T20:16:23.000Z,4141,1822,0
+Outdoor Running,Outdoor Running,2024-10-23T18:09:05.000Z,4944,1762,146
+Outdoor Running,Outdoor Running,2024-10-22T19:33:31.000Z,6151,2231,129
+Outdoor Running,Outdoor Running,2024-10-21T19:35:41.000Z,3304,1224,92
+Outdoor Running,Outdoor Running,2024-10-18T19:28:56.000Z,4927,1669,140
+Indoor Running,Indoor Running,2024-10-17T20:10:49.000Z,3444,1201,0
+Indoor Running,Indoor Running,2024-10-17T20:06:53.000Z,241,118,0
+Indoor Running,Indoor Running,2024-10-16T19:49:08.000Z,5649,1801,0
+Indoor Running,Indoor Running,2024-10-15T20:45:07.000Z,3524,1201,0
+Outdoor Running,Outdoor Running,2024-10-14T18:46:35.000Z,5959,2282,138
+Outdoor Running,Outdoor Running,2024-10-13T15:08:13.000Z,7187,3409,322
+Outdoor Running,Outdoor Running,2024-10-11T19:05:02.000Z,4723,1800,98
+Outdoor Running,Outdoor Running,2024-10-08T19:53:37.000Z,3745,1385,83
+Outdoor Running,Outdoor Running,2024-10-07T20:39:35.000Z,4959,1747,138
+Hiking,Hiking,2024-10-06T15:21:09.000Z,6290,7661,250
+Outdoor Walking,Outdoor Walking,2024-10-04T20:30:22.000Z,274,207,6
+Outdoor Running,Outdoor Running,2024-10-04T20:02:21.000Z,3759,1442,82
+Indoor Running,Indoor Running,2024-10-02T20:47:07.000Z,3557,1200,0
+Indoor Running,Indoor Running,2024-10-01T21:06:41.000Z,3524,1200,0
+Hiking,Hiking,2024-09-27T17:57:46.000Z,22155,18984,374
+Hiking,Hiking,2024-09-27T16:18:12.000Z,4836,5928,131
+Golf,Golf,2024-09-24T20:02:18.000Z,0,13989,0
+Outdoor Running,Outdoor Running,2024-09-24T14:44:36.000Z,8044,2642,84
+Golf,Golf,2024-09-23T23:40:41.000Z,0,7299,0
+Indoor Running,Indoor Running,2024-02-11T20:03:56.000Z,3219,900,0
+Running,Running,2024-01-14T17:21:30.000Z,3986,1473,94
+Indoor Running,Indoor Running,2024-01-09T21:20:49.000Z,3219,900,0
+Running,Running,2024-01-09T21:20:00.000Z,3219,1020,0
+Indoor Running,Indoor Running,2024-01-04T20:59:21.000Z,3219,900,0
+Running,Running,2024-01-04T20:59:00.000Z,3219,900,0
+Hiking,Hiking,2023-10-09T13:57:55.000Z,7341,6351,64
+Hiking,Hiking,2023-10-08T16:29:58.000Z,17339,16866,365
+Running,Running,2023-09-22T21:49:09.000Z,3352,1238,92
+Running,Running,2023-07-25T20:19:17.000Z,2634,1205,82
+Paddle Sports,Paddle Sports,2023-07-24T23:21:15.000Z,0,993,0
+Walking,Walking,2023-07-18T17:44:49.000Z,4940,5828,225
+Running,Running,2023-07-14T20:15:22.000Z,3156,1393,88
+Running,Running,2023-07-13T17:23:21.000Z,3336,1450,78
+Golf,Golf,2023-07-10T20:39:06.000Z,0,58652,0
+Running,Running,2023-07-05T21:08:34.000Z,3221,1159,42
+Walking,Walking,2023-07-04T17:43:29.000Z,3948,1062,79
+Running,Running,2023-07-04T17:18:31.000Z,3238,1488,68
+Golf,Golf,2023-07-01T12:35:00.000Z,0,3514,0
+Running,Running,2023-06-28T19:23:29.000Z,3381,1325,87
+Running,Running,2023-06-27T17:54:44.000Z,3301,1425,92
+Cycling,Cycling,2023-06-25T22:31:17.000Z,4460,1248,37
+Cycling,Cycling,2023-06-25T20:42:37.000Z,1630,821,31
+Running,Running,2023-06-22T18:48:27.000Z,2039,759,22
+Running,Running,2023-06-20T17:03:57.000Z,1640,465,9
+Running,Running,2023-06-13T20:15:09.000Z,3033,1319,90
+Cycling,Cycling,2023-06-10T20:57:05.000Z,1443,536,27
+Cycling,Cycling,2023-06-10T20:08:29.000Z,3114,919,36
+Cycling,Cycling,2023-06-10T19:04:03.000Z,441,529,6
+Cycling,Cycling,2023-06-10T18:01:58.000Z,3199,1116,14
+Running,Running,2023-06-08T21:28:47.000Z,3159,1357,89
+Walking,Walking,2023-06-06T19:57:44.000Z,358,311,14
+Running,Running,2023-06-06T19:30:24.000Z,3248,1408,65
+Walking,Walking,2023-06-05T18:58:16.000Z,3030,1050,75
+Running,Running,2023-06-05T18:47:47.000Z,1079,616,27
+Walking,Walking,2023-06-01T18:21:06.000Z,503,408,16
+Running,Running,2023-06-01T18:12:21.000Z,1636,513,16
+Golf,Golf,2023-06-01T12:33:59.000Z,0,5673,0
+Cycling,Cycling,2023-05-26T21:58:29.000Z,5623,1244,36
+Cycling,Cycling,2023-05-26T21:52:50.000Z,85,328,20
+Walking,Walking,2023-05-21T14:37:32.000Z,3972,3014,103
+Cycling,Cycling,2023-05-19T22:24:24.000Z,2981,564,33
+Cycling,Cycling,2023-05-19T21:10:35.000Z,3152,877,10
+Walking,Walking,2023-05-19T16:40:51.000Z,1995,1486,51
+Running,Running,2023-05-16T19:25:43.000Z,2643,1098,76
+Running,Running,2023-05-15T21:30:29.000Z,1632,504,34
+Running,Running,2023-05-11T16:43:12.000Z,3133,1262,89
+Running,Running,2023-05-09T20:16:54.000Z,3242,1039,53
+Indoor Running,Indoor Running,2023-04-26T19:07:42.000Z,2906,1224,0
+Running,Running,2023-04-25T17:57:58.000Z,3069,1260,92
+Running,Running,2023-04-21T19:20:59.000Z,3018,1305,89
+Cycling,Cycling,2023-04-20T12:34:52.000Z,18005,8124,363
+Yoga,Yoga,2023-04-19T21:44:27.000Z,0,652,0
+Yoga,Yoga,2023-04-18T19:16:51.000Z,0,661,0
+Cycling,Cycling,2023-04-15T16:50:52.000Z,36459,7243,396
+Golf,Golf,2023-04-07T17:43:29.000Z,0,16778,0
+Downhill Skiing,Downhill Skiing,2023-04-01T14:45:15.000Z,17976,5940,3660
+Downhill Skiing,Downhill Skiing,2023-03-31T16:02:46.000Z,20544,4613,4116
+Cycling,Cycling,2023-03-26T16:07:29.000Z,32620,6933,387
+Downhill Skiing,Downhill Skiing,2023-03-18T16:38:15.000Z,25618,6328,3649
+Downhill Skiing,Downhill Skiing,2023-03-17T17:21:45.000Z,14502,7872,1754
+Indoor Running,Indoor Running,2023-03-14T19:19:28.000Z,2754,992,0
+Running,Running,2023-03-12T16:29:19.000Z,4039,1309,77
+Running,Running,2023-03-08T20:00:52.000Z,2795,1141,73
+Running,Running,2023-03-07T16:45:56.000Z,3261,1317,75
+Running,Running,2023-03-02T23:24:07.000Z,349,95,10
+Running,Running,2023-03-02T23:11:26.000Z,2004,646,33
+Running,Running,2023-03-01T19:00:07.000Z,2803,893,50
+Golf,Golf,2023-02-21T15:03:34.000Z,0,8456,0
+Running,Running,2023-02-20T20:32:52.000Z,2183,680,38
+Cycling,Cycling,2023-02-19T19:51:14.000Z,13345,2577,155
+Walking,Walking,2023-02-16T20:30:32.000Z,413,316,11
+Running,Running,2023-02-16T20:13:07.000Z,3232,1034,62
+Running,Running,2023-02-14T20:30:55.000Z,2257,803,37
+Running,Running,2023-02-13T20:46:59.000Z,2702,866,61
+Cycling,Cycling,2023-02-10T19:51:19.000Z,10930,5045,247
+Running,Running,2023-02-08T21:55:45.000Z,2440,764,36
+Running,Running,2023-02-06T20:15:46.000Z,3188,1256,73
+Walking,Walking,2023-02-05T14:32:23.000Z,3909,3116,142
+Indoor Running,Indoor Running,2023-01-27T21:30:48.000Z,3325,1244,0
+Running,Running,2023-01-24T20:57:43.000Z,2520,993,67
+Indoor Running,Indoor Running,2023-01-23T21:10:38.000Z,2736,957,0
+Running,Running,2023-01-20T20:41:03.000Z,2960,993,73
+Running,Running,2023-01-19T20:10:51.000Z,2481,814,59
+Indoor Running,Indoor Running,2023-01-18T21:18:20.000Z,2678,1013,0
+Running,Running,2023-01-16T21:32:51.000Z,3109,1215,98
+Indoor Running,Indoor Running,2023-01-11T21:15:18.000Z,2678,1163,0
+Indoor Running,Indoor Running,2023-01-10T17:17:05.000Z,2659,945,0
+Running,Running,2023-01-05T20:45:34.000Z,3238,1313,94
+Running,Running,2023-01-04T22:21:16.000Z,1599,435,13
+Running,Running,2023-01-04T22:15:28.000Z,787,220,5
+Cycling,Cycling,2023-01-02T19:11:18.000Z,9039,3987,164
+Indoor Running,Indoor Running,2022-12-28T21:03:08.000Z,2663,975,0
+Indoor Running,Indoor Running,2022-12-24T19:05:30.000Z,2727,1011,0
+Running,Running,2022-12-22T22:01:50.000Z,3243,1130,91
+Running,Running,2022-12-20T20:52:42.000Z,4501,1928,97
+Running,Running,2022-12-18T20:02:24.000Z,3042,1277,83
+Running,Running,2022-12-16T20:34:46.000Z,3145,1292,78
+Cooldown,Cooldown,2022-12-13T20:42:43.000Z,0,348,0
+Running,Running,2022-12-12T20:00:47.000Z,3177,1332,76
+Running,Running,2022-12-01T21:06:08.000Z,2437,797,42
+Running,Running,2022-11-29T21:18:37.000Z,2912,921,39
+Running,Running,2022-11-27T19:57:48.000Z,3243,1144,90
+Walking,Walking,2022-11-25T17:02:56.000Z,2531,2895,59
+Running,Running,2022-11-24T15:40:16.000Z,1439,460,21
+Walking,Walking,2022-11-24T14:46:52.000Z,2556,2518,47
+Running,Running,2022-11-22T20:13:06.000Z,1295,401,10
+Running,Running,2022-11-09T21:15:01.000Z,3074,1284,75
+Running,Running,2022-10-27T19:09:10.000Z,8474,3000,177
+Running,Running,2022-10-24T19:17:21.000Z,3199,1327,76
+Cycling,Cycling,2022-10-22T15:56:03.000Z,46291,8583,266
+Cycling,Cycling,2022-10-21T18:25:12.000Z,11212,5170,290
+Running,Running,2022-10-17T19:50:20.000Z,3217,1300,76
+Cycling,Cycling,2022-09-30T12:24:52.000Z,10677,5986,277
+Running,Running,2022-09-27T18:33:06.000Z,3259,1246,81
+Cycling,Cycling,2022-09-25T01:48:59.000Z,2900,1046,38
+Cycling,Cycling,2022-09-24T23:57:28.000Z,3311,1339,44
+Cycling,Cycling,2022-09-24T23:39:05.000Z,1847,884,28
+Cycling,Cycling,2022-09-24T17:16:24.000Z,13959,3324,116
+Running,Running,2022-09-23T20:17:01.000Z,3265,1212,81
+Running,Running,2022-09-21T21:28:30.000Z,2032,596,22
+Running,Running,2022-09-20T19:44:17.000Z,3262,1192,75
+Walking,Walking,2022-09-16T16:57:53.000Z,1156,1285,14
+Cycling,Cycling,2022-09-13T19:51:04.000Z,3514,621,36
+Cycling,Cycling,2022-09-13T19:11:12.000Z,2351,626,25
+Cycling,Cycling,2022-09-13T16:54:37.000Z,5686,1362,35
+Running,Running,2022-09-12T22:41:14.000Z,3222,1249,76
+Walking,Walking,2022-09-08T16:17:16.000Z,2823,2133,31
+Running,Running,2022-09-07T23:08:15.000Z,4736,1446,73
+Cycling,Cycling,2022-09-02T03:29:04.000Z,2756,1006,35
+Cycling,Cycling,2022-09-02T01:45:41.000Z,3645,1345,38
+Cycling,Cycling,2022-09-01T22:30:10.000Z,4300,1661,42
+Cycling,Cycling,2022-09-01T21:51:41.000Z,2691,663,4
+Golf,Golf,2022-08-28T19:18:13.000Z,0,16866,0
+Cycling,Cycling,2022-08-27T22:14:20.000Z,666,376,2
+Cycling,Cycling,2022-08-27T20:44:44.000Z,511,592,2
+Cycling,Cycling,2022-08-24T23:23:50.000Z,9729,4624,228
+Running,Running,2022-08-23T18:16:29.000Z,4049,1323,104
+Running,Running,2022-08-19T19:38:52.000Z,3196,1235,80
+Cycling,Cycling,2022-08-19T00:32:48.000Z,2558,607,36
+Cycling,Cycling,2022-08-18T20:47:26.000Z,2148,370,6
+Running,Running,2022-08-15T19:41:57.000Z,3044,1193,74
+Cycling,Cycling,2022-08-13T18:50:50.000Z,2654,477,33
+Cycling,Cycling,2022-08-13T16:39:07.000Z,29606,6396,342
+Cycling,Cycling,2022-08-13T16:36:35.000Z,34,62,7
+Golf,Golf,2022-08-09T14:06:33.000Z,0,6348,0
+Cycling,Cycling,2022-08-07T12:00:19.000Z,88424,29063,1943
+Morning Ride,Ride,2017-11-01T07:51:32Z,3372,564,4
+Afternoon Run,Run,2017-10-31T17:50:51Z,4841,2008,37
+Afternoon Ride,Ride,2017-10-31T17:11:46Z,3320,573,48
+Morning Ride,Ride,2017-10-31T09:12:32Z,3369,553,4
+Afternoon Run,Run,2017-10-30T17:57:27Z,3178,921,18
+Afternoon Ride,Ride,2017-10-23T16:52:08Z,3331,611,49
+Morning Ride,Ride,2017-10-23T10:18:24Z,3330,567,3
+Afternoon Ride,Ride,2017-10-18T17:18:36Z,2680,709,28
+Afternoon Run,Run,2017-10-18T15:31:57Z,4828,1440,0
+Afternoon Ride,Ride,2017-10-17T15:51:24Z,3324,709,50
+Morning Ride,Ride,2017-10-17T09:18:46Z,3308,497,4
+Evening Run,Run,2017-10-16T20:00:00Z,6437,1800,0
+Evening Ride,Ride,2017-10-15T19:52:27Z,2269,535,5
+Evening Ride,Ride,2017-10-15T18:07:08Z,2475,523,18
+Afternoon Run,Run,2017-10-12T16:39:47Z,3238,921,18
+Afternoon Run,Run,2017-10-11T16:24:32Z,8701,2610,79
+Afternoon Ride,Ride,2017-10-10T16:56:03Z,3226,605,48
+Morning Ride,Ride,2017-10-10T08:42:53Z,3302,573,3
+Afternoon Run,Run,2017-10-09T15:42:00Z,4184,1380,0
+Night Ride,Ride,2017-10-07T21:30:34Z,1879,433,7
+Afternoon Ride,Ride,2017-10-07T16:59:51Z,4464,870,30
+Afternoon Ride,Ride,2017-10-06T15:24:39Z,3311,705,49
+Morning Ride,Ride,2017-10-06T08:07:50Z,3351,533,3
+Afternoon Run,Run,2017-10-05T17:26:47Z,2908,828,17
+Lunch Ride,Ride,2017-10-05T11:35:41Z,3291,606,50
+Morning Ride,Ride,2017-10-05T08:05:38Z,3346,486,4
+Afternoon Ride,Ride,2017-10-04T16:44:38Z,3254,644,49
+Morning Ride,Ride,2017-10-04T08:13:17Z,3383,546,3
+Afternoon Run,Run,2017-10-03T17:27:59Z,3273,907,18
+Afternoon Ride,Ride,2017-10-01T17:41:31Z,2199,404,5

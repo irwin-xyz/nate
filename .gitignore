@@ -1,5 +1,8 @@
 .DS_Store
 .bundle/
+.env
+.env.*
+!.env.example
 _site/
 secrets.json
 node_modules/

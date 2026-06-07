@@ -7,6 +7,8 @@
   },
   "scripts": {
     "build": "node scripts/build.js",
+    "convert:healthfit": "node scripts/convert-healthfit-fit-to-gpx.js",
+    "export:healthfit": "node scripts/export-healthfit.js",
     "postinstall": "bundle config set path vendor/bundle && bundle install --local",
     "verify": "npm run build && node scripts/verify-site.js",
     "serve": "python3 -m http.server 4000 -d _site"
@@ -20,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/irwin-xyz/nate-irwin-xyz/issues"
   },
-  "homepage": "https://github.com/irwin-xyz/nate-irwin-xyz#readme"
+  "homepage": "https://github.com/irwin-xyz/nate-irwin-xyz#readme",
+  "dependencies": {
+    "fit-file-parser": "^3.0.2"
+  }
 }

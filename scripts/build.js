@@ -5,6 +5,29 @@ const root = path.resolve(__dirname, "..");
 const outDir = path.join(root, "_site");
 const generatedAt = new Date();
 
+function loadDotEnv() {
+  const envPath = path.join(root, ".env");
+  if (!fs.existsSync(envPath)) return;
+
+  for (const line of fs.readFileSync(envPath, "utf8").split(/\r?\n/)) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith("#")) continue;
+    const match = trimmed.match(/^([A-Za-z_][A-Za-z0-9_]*)=(.*)$/);
+    if (!match || process.env[match[1]] !== undefined) continue;
+
+    let value = match[2].trim();
+    if (
+      (value.startsWith('"') && value.endsWith('"')) ||
+      (value.startsWith("'") && value.endsWith("'"))
+    ) {
+      value = value.slice(1, -1);
+    }
+    process.env[match[1]] = value;
+  }
+}
+
+loadDotEnv();
+
 const description =
   "Nate Irwin — Co-Founder and Chief Product Officer at OuterSpatial, building products that help people get outside. Based in Steamboat Springs, Colorado.";
 const updated = "June 7, 2026";
@@ -56,7 +79,11 @@ function slug(value) {
 
 function formatDate(value, options = {}) {
   if (!value) return "";
-  const date = value instanceof Date ? value : new Date(value);
+  let date = value instanceof Date ? value : new Date(value);
+  if (typeof value === "string" && /^\d{4}-\d{2}-\d{2}$/.test(value)) {
+    const [year, month, day] = value.split("-").map(Number);
+    date = new Date(year, month - 1, day);
+  }
   if (Number.isNaN(date.getTime())) return "";
   return new Intl.DateTimeFormat("en-US", {
     month: "short",
@@ -76,6 +103,38 @@ function milesFromMeters(meters) {
 
 function hoursFromSeconds(seconds) {
   return (seconds || 0) / 3600;
+}
+
+function secondsFromDuration(value) {
+  if (value === undefined || value === null || value === "") return 0;
+  if (typeof value === "number") return value;
+  const text = String(value).trim();
+  if (/^\d+(\.\d+)?$/.test(text)) return Number(text);
+  const parts = text.split(":").map(Number);
+  if (parts.some(Number.isNaN)) return 0;
+  if (parts.length === 3) return parts[0] * 3600 + parts[1] * 60 + parts[2];
+  if (parts.length === 2) return parts[0] * 60 + parts[1];
+  return 0;
+}
+
+function metersFromDistance(value, unit = "m") {
+  const amount = Number(value || 0);
+  if (!amount) return 0;
+  if (unit === "mi") return amount * 1609.344;
+  if (unit === "km") return amount * 1000;
+  return amount;
+}
+
+function distanceBetween(pointA, pointB) {
+  const radius = 6371000;
+  const latA = (pointA.lat * Math.PI) / 180;
+  const latB = (pointB.lat * Math.PI) / 180;
+  const deltaLat = ((pointB.lat - pointA.lat) * Math.PI) / 180;
+  const deltaLon = ((pointB.lon - pointA.lon) * Math.PI) / 180;
+  const haversine =
+    Math.sin(deltaLat / 2) ** 2 +
+    Math.cos(latA) * Math.cos(latB) * Math.sin(deltaLon / 2) ** 2;
+  return radius * 2 * Math.atan2(Math.sqrt(haversine), Math.sqrt(1 - haversine));
 }
 
 function head(extraCss = []) {
@@ -174,12 +233,32 @@ function safeLink(url, label, className = "") {
   return `<a${className ? ` class="${className}"` : ""} href="${escapeHtml(url)}">${escapeHtml(label)}</a>`;
 }
 
+function fetchOptions(options = {}) {
+  const { timeoutMs, ...fetchInit } = options;
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), timeoutMs || 15000);
+  return {
+    options: { ...fetchInit, signal: fetchInit.signal || controller.signal },
+    cleanup: () => clearTimeout(timeout),
+  };
+}
+
 async function fetchJson(url, options = {}) {
-  const response = await fetch(url, options);
+  const request = fetchOptions(options);
+  const response = await fetch(url, request.options).finally(request.cleanup);
   if (!response.ok) {
     throw new Error(`${url} returned ${response.status}`);
   }
   return response.json();
+}
+
+async function fetchText(url, options = {}) {
+  const request = fetchOptions(options);
+  const response = await fetch(url, request.options).finally(request.cleanup);
+  if (!response.ok) {
+    throw new Error(`${url} returned ${response.status}`);
+  }
+  return response.text();
 }
 
 function warnFallback(name, error) {
@@ -218,6 +297,208 @@ async function getStravaActivities() {
   }
 }
 
+function parseCsv(text) {
+  const rows = [];
+  let row = [];
+  let field = "";
+  let quoted = false;
+
+  for (let index = 0; index < text.length; index += 1) {
+    const character = text[index];
+    const next = text[index + 1];
+
+    if (quoted && character === '"' && next === '"') {
+      field += '"';
+      index += 1;
+    } else if (character === '"') {
+      quoted = !quoted;
+    } else if (!quoted && character === ",") {
+      row.push(field);
+      field = "";
+    } else if (!quoted && (character === "\n" || character === "\r")) {
+      if (character === "\r" && next === "\n") index += 1;
+      row.push(field);
+      if (row.some((value) => value.trim())) rows.push(row);
+      row = [];
+      field = "";
+    } else {
+      field += character;
+    }
+  }
+
+  row.push(field);
+  if (row.some((value) => value.trim())) rows.push(row);
+  if (rows.length < 2) return [];
+
+  const headers = rows[0].map((header) => header.trim());
+  return rows.slice(1).map((values) =>
+    Object.fromEntries(headers.map((header, index) => [header, values[index] ?? ""]))
+  );
+}
+
+function valueFor(row, names) {
+  const entries = Object.entries(row);
+  for (const name of names) {
+    const match = entries.find(([key]) => key.toLowerCase().replace(/[^a-z0-9]/g, "") === name);
+    if (match && match[1] !== "") return match[1];
+  }
+  return "";
+}
+
+function normalizeHealthFitWorkout(row) {
+  const distanceMeters = valueFor(row, ["distancem", "distancemeters", "distanceinmeters", "meter"]);
+  const distanceKm = valueFor(row, ["distancekm", "distancekilometers"]);
+  const distanceMiles = valueFor(row, ["distancemi", "distancemiles"]);
+  const start = valueFor(row, ["startdate", "starttime", "date", "workoutdate"]);
+  const type = valueFor(row, ["type", "activity", "activitytype", "workouttype", "sport"]) || "Workout";
+  const duration =
+    valueFor(row, ["movingtime", "movingtimes", "duration", "durationseconds", "elapsedtime"]) || 0;
+  const elevation = valueFor(row, ["elevationgain", "elevationgainm", "ascent", "totalascent"]);
+
+  return {
+    name: valueFor(row, ["name", "title"]) || type,
+    distance:
+      metersFromDistance(distanceMeters, "m") ||
+      metersFromDistance(distanceKm, "km") ||
+      metersFromDistance(distanceMiles, "mi"),
+    moving_time: secondsFromDuration(duration),
+    total_elevation_gain: Number(elevation || 0),
+    type,
+    start_date: start,
+    start_date_local: start,
+    location_city: valueFor(row, ["city", "locationcity"]),
+    location_state: valueFor(row, ["state", "locationstate"]),
+  };
+}
+
+function parseHealthFitExport(contents, sourceName) {
+  const trimmed = contents.trim();
+  if (!trimmed) return [];
+
+  if (sourceName.endsWith(".gpx") || trimmed.startsWith("<?xml")) {
+    return [parseHealthFitGpx(trimmed, sourceName)].filter(Boolean);
+  }
+
+  if (trimmed.startsWith("{") || trimmed.startsWith("[")) {
+    const data = JSON.parse(trimmed);
+    const workouts = Array.isArray(data) ? data : data.workouts || data.data || [];
+    return workouts.map(normalizeHealthFitWorkout).filter((workout) => workout.start_date || workout.distance);
+  }
+
+  if (sourceName.endsWith(".csv") || trimmed.includes(",")) {
+    return parseCsv(trimmed).map(normalizeHealthFitWorkout).filter((workout) => workout.start_date || workout.distance);
+  }
+
+  throw new Error("HealthFit export must be GPX, CSV, or JSON");
+}
+
+function typeFromFileName(fileName) {
+  const basename = path.basename(fileName, path.extname(fileName));
+  const parts = basename.split("-");
+  if (parts.length < 5) return "";
+  return parts.slice(4, -1).join(" ");
+}
+
+function startDateFromFileName(fileName) {
+  const basename = path.basename(fileName);
+  const match = basename.match(/^(\d{4})-(\d{2})-(\d{2})-(\d{2})(\d{2})(\d{2})-/);
+  if (!match) return "";
+  const [, year, month, day, hour, minute, second] = match;
+  return `${year}-${month}-${day}T${hour}:${minute}:${second}`;
+}
+
+function parseHealthFitGpx(xml, sourceName) {
+  const points = [...xml.matchAll(/<trkpt\b[^>]*lat="([^"]+)"[^>]*lon="([^"]+)"[^>]*>([\s\S]*?)<\/trkpt>/g)]
+    .map((match) => ({
+      lat: Number(match[1]),
+      lon: Number(match[2]),
+      ele: Number(xmlTag(match[3], "ele") || 0),
+      time: xmlTag(match[3], "time"),
+    }))
+    .filter((point) => Number.isFinite(point.lat) && Number.isFinite(point.lon));
+
+  if (!points.length) return null;
+
+  let distance = 0;
+  let elevationGain = 0;
+  for (let index = 1; index < points.length; index += 1) {
+    distance += distanceBetween(points[index - 1], points[index]);
+    const elevationDelta = points[index].ele - points[index - 1].ele;
+    if (elevationDelta > 0) elevationGain += elevationDelta;
+  }
+
+  const start = points[0].time || startDateFromFileName(sourceName);
+  const end = points.at(-1).time;
+  const movingTime =
+    start && end ? Math.max(0, (new Date(end).getTime() - new Date(start).getTime()) / 1000) : 0;
+  const type = xmlTag(xml, "type") || typeFromFileName(sourceName) || "Workout";
+
+  return {
+    name: typeFromFileName(sourceName) || type,
+    distance,
+    moving_time: movingTime,
+    total_elevation_gain: elevationGain,
+    type: type
+      .split(/\s+/)
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" "),
+    start_date: start,
+    start_date_local: start,
+  };
+}
+
+function readHealthFitDirectory(directory) {
+  if (!fs.existsSync(directory)) return [];
+  return fs
+    .readdirSync(directory)
+    .filter((file) => file.toLowerCase().endsWith(".gpx"))
+    .map((file) => path.join(directory, file))
+    .map((file) => parseHealthFitGpx(fs.readFileSync(file, "utf8"), file))
+    .filter(Boolean)
+    .sort((a, b) => new Date(b.start_date || 0) - new Date(a.start_date || 0));
+}
+
+async function getHealthFitActivities() {
+  const { HEALTHFIT_EXPORT_URL, HEALTHFIT_EXPORT_FILE, HEALTHFIT_EXPORT_DIR } = process.env;
+  const localCandidates = [
+    HEALTHFIT_EXPORT_FILE,
+    "_data/healthfit-workouts.csv",
+    "_data/healthfit-workouts.json",
+  ].filter(Boolean);
+
+  if (HEALTHFIT_EXPORT_URL) {
+    try {
+      const contents = await fetchText(HEALTHFIT_EXPORT_URL);
+      const activities = parseHealthFitExport(contents, HEALTHFIT_EXPORT_URL);
+      if (activities.length) return { source: "HealthFit export", activities };
+    } catch (error) {
+      warnFallback("HealthFit URL", error);
+    }
+  }
+
+  if (HEALTHFIT_EXPORT_DIR) {
+    try {
+      const activities = readHealthFitDirectory(HEALTHFIT_EXPORT_DIR);
+      if (activities.length) return { source: "HealthFit GPX exports", activities };
+    } catch (error) {
+      warnFallback("HealthFit directory", error);
+    }
+  }
+
+  for (const relativePath of localCandidates) {
+    const filePath = path.join(root, relativePath);
+    if (!fs.existsSync(filePath)) continue;
+    try {
+      const activities = parseHealthFitExport(fs.readFileSync(filePath, "utf8"), relativePath);
+      if (activities.length) return { source: "local HealthFit export", activities };
+    } catch (error) {
+      warnFallback("HealthFit file", error);
+    }
+  }
+
+  return null;
+}
+
 function normalizeGoodreadsBook(entry) {
   const book = first(entry.book);
   const shelves = first(entry.shelves)?.shelf ?? [];
@@ -238,13 +519,101 @@ function normalizeGoodreadsBook(entry) {
   };
 }
 
-async function getBooks() {
-  const fallback = readJson("_data/books.json").map(normalizeGoodreadsBook);
+function decodeXml(value) {
+  return String(value ?? "")
+    .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1")
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&apos;/g, "'");
+}
+
+function xmlTag(xml, tag) {
+  const match = xml.match(new RegExp(`<${tag}(?:\\s[^>]*)?>([\\s\\S]*?)</${tag}>`));
+  return match ? decodeXml(match[1].trim()) : "";
+}
+
+function normalizeGoodreadsReviewXml(reviewXml, status) {
+  const bookXml = reviewXml.match(/<book>([\s\S]*?)<\/book>/)?.[1] || "";
+  const authors = [...bookXml.matchAll(/<author>([\s\S]*?)<\/author>/g)]
+    .map((match) => xmlTag(match[1], "name"))
+    .filter(Boolean);
+
+  return {
+    title: xmlTag(bookXml, "title"),
+    authors,
+    url: xmlTag(bookXml, "link"),
+    coverUrl: xmlTag(bookXml, "image_url"),
+    status,
+    readAt: xmlTag(reviewXml, "read_at"),
+    addedAt: xmlTag(reviewXml, "date_added"),
+  };
+}
+
+async function fetchGoodreadsShelf({ apiKey, userId, shelf, status }) {
+  const perPage = 200;
+  let page = 1;
+  let totalPages = 1;
+  const books = [];
+
+  while (page <= totalPages) {
+    const params = new URLSearchParams({
+      key: apiKey,
+      v: "2",
+      shelf,
+      per_page: String(perPage),
+      page: String(page),
+    });
+    const xml = await fetchText(`https://www.goodreads.com/review/list/${userId}.xml?${params}`);
+    const total = Number(xml.match(/<reviews\b[^>]*\btotal="(\d+)"/)?.[1] || 0);
+    totalPages = Math.max(1, Math.ceil(total / perPage));
+
+    for (const match of xml.matchAll(/<review>([\s\S]*?)<\/review>/g)) {
+      books.push(normalizeGoodreadsReviewXml(match[1], status));
+    }
+
+    page += 1;
+  }
+
+  return books;
+}
+
+async function getGoodreadsBooks(fallback) {
+  const { GOODREADS_API_KEY, GOODREADS_USER_ID = "76558" } = process.env;
+
+  if (!GOODREADS_API_KEY) return null;
+
+  try {
+    const shelves = [
+      { shelf: "currently-reading", status: "currently_reading" },
+      { shelf: "read", status: "read" },
+      { shelf: "to-read", status: "to_read" },
+    ];
+    const books = (
+      await Promise.all(
+        shelves.map((shelf) =>
+          fetchGoodreadsShelf({
+            apiKey: GOODREADS_API_KEY,
+            userId: GOODREADS_USER_ID,
+            ...shelf,
+          })
+        )
+      )
+    ).flat();
+
+    return { source: "Goodreads", books: books.length ? books : fallback };
+  } catch (error) {
+    warnFallback("Goodreads", error);
+    return null;
+  }
+}
+
+async function getHardcoverBooks(fallback) {
   const { HARDCOVER_API_TOKEN } = process.env;
 
-  if (!HARDCOVER_API_TOKEN) {
-    return { source: "fallback Goodreads export", books: fallback };
-  }
+  if (!HARDCOVER_API_TOKEN) return null;
 
   try {
     const data = await fetchJson("https://api.hardcover.app/v1/graphql", {
@@ -286,11 +655,19 @@ async function getBooks() {
       addedAt: entry.updated_at,
     }));
 
-    return { source: "Hardcover", books };
+    return { source: "Hardcover", books: books.length ? books : fallback };
   } catch (error) {
-    warnFallback("book", error);
-    return { source: "fallback Goodreads export", books: fallback };
+    warnFallback("Hardcover", error);
+    return null;
   }
+}
+
+async function getBooks() {
+  const fallback = readJson("_data/books.json").map(normalizeGoodreadsBook);
+  return (
+    (await getGoodreadsBooks(fallback)) ||
+    (await getHardcoverBooks(fallback)) || { source: "fallback Goodreads export", books: fallback }
+  );
 }
 
 async function getSpotifyPlaylists() {
@@ -568,7 +945,7 @@ async function main() {
   clean();
   copyStaticAssets();
   renderHome();
-  renderActivePage(await getStravaActivities());
+  renderActivePage((await getHealthFitActivities()) || (await getStravaActivities()));
   renderBooksPage(await getBooks());
   renderBucketListPage();
   renderMusicPage(await getSpotifyPlaylists());
