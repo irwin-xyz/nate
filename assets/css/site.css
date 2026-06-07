@@ -40,6 +40,128 @@ ul {
   margin-left: 50px;
   margin-top: 25px;
 }
+.section-header {
+  margin-bottom: 32px;
+}
+  .section-header p {
+    font-size: 18px;
+    max-width: 760px;
+  }
+.source-note {
+  color: #777;
+  font-size: 14px !important;
+  margin-top: -8px;
+}
+.stat-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  margin-bottom: 36px;
+}
+.stat-card {
+  border: 1px solid #e1e1e1;
+  border-radius: 6px;
+  padding: 16px;
+}
+.stat-value {
+  display: block;
+  font-size: 30px;
+  line-height: 1.1;
+}
+.stat-label {
+  color: #666;
+  display: block;
+  font-size: 13px;
+  margin-top: 6px;
+  text-transform: uppercase;
+}
+.dashboard-section {
+  margin-bottom: 36px;
+}
+  .dashboard-section h2 {
+    border-bottom: 1px solid #e1e1e1;
+    font-size: 26px;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+  }
+.dashboard-list {
+  border-top: 1px solid #e1e1e1;
+}
+.dashboard-row {
+  align-items: center;
+  border-bottom: 1px solid #e1e1e1;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  padding: 14px 0;
+}
+  .dashboard-row h2 {
+    border: 0;
+    font-size: 18px;
+    margin: 0 0 4px;
+    padding: 0;
+  }
+  .dashboard-row p {
+    color: #666;
+    margin: 0;
+  }
+.metric-pair {
+  color: #444;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 14px;
+}
+.status-pill {
+  border: 1px solid #d7d7d7;
+  border-radius: 999px;
+  color: #444;
+  flex: 0 0 auto;
+  font-size: 12px;
+  padding: 4px 10px;
+  text-transform: uppercase;
+}
+.playlist-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.playlist-card {
+  border: 1px solid #e1e1e1;
+  border-radius: 6px;
+  padding: 16px;
+}
+  .playlist-card h2 {
+    border: 0;
+    font-size: 20px;
+    margin: 0 0 4px;
+    padding: 0;
+  }
+  .playlist-card p {
+    color: #666;
+    margin-bottom: 10px;
+  }
+  .playlist-card ol {
+    margin-bottom: 0;
+    padding-left: 22px;
+  }
+  .playlist-card li {
+    margin-bottom: 6px;
+  }
+  .playlist-card strong {
+    color: #666;
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+  }
+@media (max-width: 640px) {
+  .dashboard-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .metric-pair {
+    width: 100%;
+  }
+}
 .brand {
   padding: 8px 0;
 }

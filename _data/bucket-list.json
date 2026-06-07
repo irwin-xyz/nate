@@ -1,0 +1,93 @@
+[
+  {
+    "title": "Build a product that has more than a million active users",
+    "status": "in_progress",
+    "category": "Work",
+    "notes": "Current product work at OuterSpatial"
+  },
+  {
+    "title": "Travel to Tibet",
+    "status": "planned",
+    "category": "Travel"
+  },
+  {
+    "title": "Read a thousand books",
+    "status": "in_progress",
+    "category": "Reading"
+  },
+  {
+    "title": "Climb Denali",
+    "status": "planned",
+    "category": "Outdoors"
+  },
+  {
+    "title": "Camp under the Northern Lights",
+    "status": "planned",
+    "category": "Outdoors"
+  },
+  {
+    "title": "Ski in South America",
+    "status": "planned",
+    "category": "Outdoors"
+  },
+  {
+    "title": "Visit Hawaii",
+    "status": "completed",
+    "category": "Travel"
+  },
+  {
+    "title": "Tour New Zealand in an RV and bungee jump off a bridge",
+    "status": "planned",
+    "category": "Travel"
+  },
+  {
+    "title": "Follow the path, from Paris to Madrid, of The Sun Also Rises",
+    "status": "planned",
+    "category": "Travel"
+  },
+  {
+    "title": "Visit Ethiopia",
+    "status": "planned",
+    "category": "Travel"
+  },
+  {
+    "title": "Visit outer space",
+    "status": "planned",
+    "category": "Travel"
+  },
+  {
+    "title": "Complete a 50-mile trail run",
+    "status": "planned",
+    "category": "Outdoors"
+  },
+  {
+    "title": "Ski in Japan",
+    "status": "planned",
+    "category": "Outdoors"
+  },
+  {
+    "title": "Speak in front of a thousand people",
+    "status": "planned",
+    "category": "Work"
+  },
+  {
+    "title": "Visit Iceland",
+    "status": "planned",
+    "category": "Travel"
+  },
+  {
+    "title": "Attend a Real Madrid vs. Barcelona soccer match at Camp Nou",
+    "status": "planned",
+    "category": "Sports"
+  },
+  {
+    "title": "Buy a vacation home and spend a lot of time there",
+    "status": "planned",
+    "category": "Life"
+  },
+  {
+    "title": "Fish for salmon in Alaska",
+    "status": "planned",
+    "category": "Outdoors"
+  }
+]
