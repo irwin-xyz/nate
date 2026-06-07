@@ -1,4 +1,6 @@
 .DS_Store
+.bundle/
 _site/
 secrets.json
 node_modules/
+vendor/bundle/
