@@ -2,9 +2,9 @@
   "name": "nate-irwin-xyz",
   "version": "1.0.0",
   "description": "A website for Nate Irwin",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node scripts/build.js",
+    "serve": "python3 -m http.server 4000 -d _site"
   },
   "repository": {
     "type": "git",
@@ -15,23 +15,5 @@
   "bugs": {
     "url": "https://github.com/irwin-xyz/nate-irwin-xyz/issues"
   },
-  "homepage": "https://github.com/irwin-xyz/nate-irwin-xyz#readme",
-  "devDependencies": {
-    "dateformat": "^2.0.0",
-    "goodreads": "0.1.0",
-    "gulp": "^3.9.1",
-    "gulp-replace": "^0.5.4",
-    "polyline": "^0.2.0",
-    "querystring": "^0.2.0",
-    "request": "^2.74.0",
-    "spotify-web-api-node": "^2.3.5",
-    "strava-v3": "^1.12.1"
-  },
-  "dependencies": {
-    "concat": "^1.0.3",
-    "concat-stream": "^1.6.2",
-    "goodreads-api-node": "^0.0.5",
-    "semistandard": "^12.0.1",
-    "xml2js": "^0.4.19"
-  }
+  "homepage": "https://github.com/irwin-xyz/nate-irwin-xyz#readme"
 }

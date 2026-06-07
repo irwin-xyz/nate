@@ -1,50 +1,19 @@
 # nate.irwin.xyz
 
-## Build
+Personal website for Nate Irwin.
 
-1. `npm install --global gulp-cli`
-2. `gulp build`
+## Development
 
-## Plan
+Build the site:
 
-1. Work on design:
-   - Home page:
-     - [ ] Add photo
-   - [ ] Footer
-   - [ ] Top menu
-1. [ ] Create a "Moments" page that shows all social media checkins in a vertical timeline
-1. Create pages
+```sh
+npm run build
+```
 
-## Pages
+Serve the generated site locally:
 
-- [ ] "Active":
-  - Strava
-- [x] "Bucket List"
-- "Out and about":
-  - Foursquare
-  - Swarm
-- "Projects":
-  - GitHub
-  - Stop linking to NPS sites, and store references to your work in this site to make sure they survive
-  - What about non-coding projects???
-- "Movies and TV":
-  - Plex
-- "Music":
-  - iTunes (playlists)
-  - Spotify (playlists and statistics)
-- "Photos":
-  - Instagram
-- "Reading":
-  - Apple reading list
-  - Goodreads
-  - Pinboard
-- "Travel":
-  - Tripit
+```sh
+npm run serve
+```
 
-Other potential sources:
-
-- Twitter
-
-Things to think about:
-
-- Start this up on a certain data? Or should you pull historic data too?
+The build script has no package dependencies. It writes the static site to `_site`.
