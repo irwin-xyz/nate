@@ -2,6 +2,9 @@
   "name": "nate-irwin-xyz",
   "version": "1.0.0",
   "description": "A website for Nate Irwin",
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "build": "node scripts/build.js",
     "serve": "python3 -m http.server 4000 -d _site"
