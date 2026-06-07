@@ -26,7 +26,7 @@ ignored by Git. If credentials are missing or an API request fails, the build
 falls back to committed data in `src/data`.
 
 - Active: committed HealthFit CSV data in `src/data/healthfit-workouts.csv`, or CSV/JSON via `HEALTHFIT_EXPORT_URL` or `HEALTHFIT_EXPORT_FILE`; Strava remains available via `STRAVA_CLIENT_ID`, `STRAVA_CLIENT_SECRET`, and `STRAVA_REFRESH_TOKEN`
-- Books: Goodreads via `GOODREADS_API_KEY` and optional `GOODREADS_USER_ID`; Hardcover remains available via optional `HARDCOVER_API_TOKEN`
+- Books: Goodreads CSV export at `src/data/goodreads-books.csv`, or another path via `GOODREADS_EXPORT_FILE`; the deprecated Goodreads API is opt-in via `GOODREADS_USE_API=true`, `GOODREADS_API_KEY`, and optional `GOODREADS_USER_ID`; Hardcover remains available via optional `HARDCOVER_API_TOKEN`
 - Music: Spotify via `SPOTIFY_CLIENT_ID`, `SPOTIFY_CLIENT_SECRET`, and optional `SPOTIFY_USER_ID`
 - Bucket List: `src/data/bucket-list.json`
 
@@ -38,6 +38,27 @@ Verify generated pages:
 ```sh
 npm run verify
 ```
+
+## Goodreads books export
+
+Goodreads no longer reliably supports its deprecated API, so the Books page
+prefers a manual Goodreads library CSV export.
+
+To update the Books page:
+
+1. Open Goodreads on desktop.
+2. Go to **My Books**.
+3. Click **Import and export** in the left sidebar.
+4. Click **Export Library**.
+5. Download the generated CSV.
+6. Save it in this repo as `src/data/goodreads-books.csv`.
+7. Run `npm run verify`.
+8. Commit the CSV when you want Render to deploy updated book data.
+
+If you want to keep the export somewhere else locally, set
+`GOODREADS_EXPORT_FILE` in `.env` to that path. Render only sees committed files
+and configured environment variables, so commit `src/data/goodreads-books.csv`
+for deploys unless you provide another accessible export path during the build.
 
 For local HealthFit files, point `HEALTHFIT_EXPORT_DIR` at the folder that
 contains GPX exports, for example:

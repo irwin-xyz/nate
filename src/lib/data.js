@@ -8,6 +8,7 @@ import {
   parseCsv,
   read,
   readJson,
+  resolvePath,
   root,
   secondsFromDuration,
   valueFor,
@@ -108,7 +109,7 @@ export async function getHealthFitActivities() {
   }
 
   for (const relativePath of localCandidates) {
-    const filePath = path.join(root, relativePath);
+    const filePath = resolvePath(relativePath);
     if (!fs.existsSync(filePath)) continue;
     try {
       const activities = parseHealthFitExport(fs.readFileSync(filePath, "utf8"), relativePath);
@@ -139,6 +140,49 @@ function normalizeGoodreadsBook(entry) {
     readAt: first(entry.read_at),
     addedAt: first(entry.date_added),
   };
+}
+
+function normalizeGoodreadsCsvBook(row) {
+  const title = row.Title || "";
+  const bookId = row["Book Id"] || "";
+  const author = row.Author || "";
+  const additionalAuthors = (row["Additional Authors"] || "")
+    .split(",")
+    .map((value) => value.trim())
+    .filter(Boolean);
+  const exclusiveShelf = row["Exclusive Shelf"] || "";
+
+  return {
+    title,
+    authors: [author, ...additionalAuthors].filter(Boolean),
+    url: bookId ? `https://www.goodreads.com/book/show/${bookId}` : "",
+    coverUrl: "",
+    status:
+      exclusiveShelf === "currently-reading"
+        ? "currently_reading"
+        : exclusiveShelf === "read"
+          ? "read"
+          : "to_read",
+    readAt: row["Date Read"] || "",
+    addedAt: row["Date Added"] || "",
+  };
+}
+
+function getGoodreadsCsvBooks() {
+  const { GOODREADS_EXPORT_FILE } = process.env;
+  const candidates = [GOODREADS_EXPORT_FILE, "src/data/goodreads-books.csv"].filter(Boolean);
+
+  for (const relativePath of candidates) {
+    const filePath = resolvePath(relativePath);
+    if (!fs.existsSync(filePath)) continue;
+
+    const books = parseCsv(fs.readFileSync(filePath, "utf8"))
+      .map(normalizeGoodreadsCsvBook)
+      .filter((book) => book.title);
+    if (books.length) return { source: "Goodreads CSV export", books };
+  }
+
+  return null;
 }
 
 function decodeXml(value) {
@@ -203,9 +247,9 @@ async function fetchGoodreadsShelf({ apiKey, userId, shelf, status }) {
 }
 
 async function getGoodreadsBooks(fallback) {
-  const { GOODREADS_API_KEY, GOODREADS_USER_ID = "76558" } = process.env;
+  const { GOODREADS_API_KEY, GOODREADS_USE_API, GOODREADS_USER_ID = "76558" } = process.env;
 
-  if (!GOODREADS_API_KEY) return null;
+  if (!GOODREADS_API_KEY || GOODREADS_USE_API !== "true") return null;
 
   try {
     const shelves = [
@@ -286,8 +330,9 @@ async function getHardcoverBooks(fallback) {
 export async function getBooks() {
   const fallback = readJson("src/data/books.json").map(normalizeGoodreadsBook);
   return (
+    getGoodreadsCsvBooks() ||
     (await getGoodreadsBooks(fallback)) ||
-    (await getHardcoverBooks(fallback)) || { source: "fallback Goodreads export", books: fallback }
+    (await getHardcoverBooks(fallback)) || { source: "fallback Goodreads JSON export", books: fallback }
   );
 }
 

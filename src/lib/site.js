@@ -38,6 +38,10 @@ export function readJson(relativePath) {
   return JSON.parse(read(relativePath));
 }
 
+export function resolvePath(filePath) {
+  return path.isAbsolute(filePath) ? filePath : path.join(root, filePath);
+}
+
 export function stripFrontMatter(contents) {
   return contents.replace(/^---\n[\s\S]*?\n---\n?/, "");
 }
@@ -156,17 +160,27 @@ export function fetchOptions(options = {}) {
   };
 }
 
+export function redactUrl(value) {
+  try {
+    const url = new URL(String(value));
+    url.search = "";
+    return url.toString();
+  } catch {
+    return String(value);
+  }
+}
+
 export async function fetchJson(url, options = {}) {
   const request = fetchOptions(options);
   const response = await fetch(url, request.options).finally(request.cleanup);
-  if (!response.ok) throw new Error(`${url} returned ${response.status}`);
+  if (!response.ok) throw new Error(`${redactUrl(url)} returned ${response.status}`);
   return response.json();
 }
 
 export async function fetchText(url, options = {}) {
   const request = fetchOptions(options);
   const response = await fetch(url, request.options).finally(request.cleanup);
-  if (!response.ok) throw new Error(`${url} returned ${response.status}`);
+  if (!response.ok) throw new Error(`${redactUrl(url)} returned ${response.status}`);
   return response.text();
 }
 
