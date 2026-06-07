@@ -25,8 +25,8 @@ exports are available. The build also reads a local `.env` file, which is
 ignored by Git. If credentials are missing or an API request fails, the build
 falls back to committed data in `src/data`.
 
-- Active: committed HealthFit CSV data in `src/data/healthfit-workouts.csv`, or CSV/JSON via `HEALTHFIT_EXPORT_URL` or `HEALTHFIT_EXPORT_FILE`; Strava remains available via `STRAVA_CLIENT_ID`, `STRAVA_CLIENT_SECRET`, and `STRAVA_REFRESH_TOKEN`
-- Books: Goodreads CSV export at `src/data/goodreads-books.csv`, or another path via `GOODREADS_EXPORT_FILE`; the deprecated Goodreads API is opt-in via `GOODREADS_USE_API=true`, `GOODREADS_API_KEY`, and optional `GOODREADS_USER_ID`; Hardcover remains available via optional `HARDCOVER_API_TOKEN`
+- Active: committed HealthFit CSV data in `src/data/healthfit-workouts.csv`, or CSV/JSON via `HEALTHFIT_EXPORT_URL` or `HEALTHFIT_EXPORT_FILE`
+- Books: Goodreads CSV export at `src/data/goodreads-books.csv`, or another path via `GOODREADS_EXPORT_FILE`
 - Music: Spotify via `SPOTIFY_CLIENT_ID`, `SPOTIFY_CLIENT_SECRET`, and optional `SPOTIFY_USER_ID`
 - Bucket List: `src/data/bucket-list.json`
 
