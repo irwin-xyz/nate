@@ -1,9 +1,8 @@
 .DS_Store
-.bundle/
+.astro/
 .env
 .env.*
 !.env.example
 _site/
 secrets.json
 node_modules/
-vendor/bundle/

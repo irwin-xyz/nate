@@ -1,0 +1,73 @@
+---
+import Layout from "../../components/Layout.astro";
+import SectionHeader from "../../components/SectionHeader.astro";
+import StatGrid from "../../components/StatGrid.astro";
+import { getHealthFitActivities, getStravaActivities } from "../../lib/data.js";
+import { formatDate, formatNumber, hoursFromSeconds, milesFromMeters } from "../../lib/site.js";
+
+const data = (await getHealthFitActivities()) || (await getStravaActivities());
+const activities = data.activities || [];
+const totalMiles = activities.reduce((sum, activity) => sum + milesFromMeters(activity.distance), 0);
+const totalHours = activities.reduce((sum, activity) => sum + hoursFromSeconds(activity.moving_time), 0);
+const totalGain = activities.reduce((sum, activity) => sum + (activity.total_elevation_gain || 0), 0);
+const byType = activities.reduce((memo, activity) => {
+  memo[activity.type] = (memo[activity.type] || 0) + 1;
+  return memo;
+}, {});
+const newest = activities[0];
+const recent = activities.slice(0, 10);
+
+function activityTypeLabel(type) {
+  return type === "Ride" ? "rides" : type === "Run" ? "runs" : `${String(type || "activity").toLowerCase()}s`;
+}
+---
+<Layout>
+  <SectionHeader
+    title="Active"
+    body="A summary of recent outdoor activity without publishing route lines or precise start locations."
+    source={data.source}
+  />
+  <StatGrid
+    stats={[
+      { value: formatNumber(activities.length), label: "recent activities" },
+      { value: formatNumber(totalMiles, { maximumFractionDigits: 1 }), label: "miles" },
+      { value: formatNumber(totalHours, { maximumFractionDigits: 1 }), label: "moving hours" },
+      { value: `${formatNumber(totalGain, { maximumFractionDigits: 0 })} m`, label: "elevation gain" },
+    ]}
+  />
+  <section class="dashboard-section">
+    <h2>Activity mix</h2>
+    <p>
+      {
+        Object.entries(byType)
+          .sort((a, b) => b[1] - a[1])
+          .map(([type, count]) => `${count} ${activityTypeLabel(type)}`)
+          .join(", ") || "No recent activity data available."
+      }
+    </p>
+  </section>
+  <section class="dashboard-section">
+    <h2>Recent activities</h2>
+    {newest ? (
+      <div class="dashboard-list">
+        {recent.map((activity) => {
+          const location = [activity.location_city, activity.location_state].filter(Boolean).join(", ");
+          return (
+            <article class="dashboard-row">
+              <div>
+                <h2>{activity.name || activity.type || "Activity"}</h2>
+                <p>{[formatDate(activity.start_date || activity.start_date_local), activity.type, location].filter(Boolean).join(" · ")}</p>
+              </div>
+              <div class="metric-pair">
+                <span>{formatNumber(milesFromMeters(activity.distance), { maximumFractionDigits: 1 })} mi</span>
+                <span>{formatNumber(hoursFromSeconds(activity.moving_time), { maximumFractionDigits: 1 })} hr</span>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    ) : (
+      <p>No activity data available.</p>
+    )}
+  </section>
+</Layout>

@@ -1,0 +1,52 @@
+---
+import { description, updated } from "../lib/site.js";
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>nate.irwin.xyz</title>
+    <meta name="author" content="Nate Irwin" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:site_name" content="nate.irwin.xyz" />
+    <meta property="og:email" content="nate@irwin.xyz" />
+    <meta property="og:type" content="blog" />
+    <meta property="twitter:account_id" content="14373135" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" type="text/css" />
+    <link rel="stylesheet" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" href="/assets/css/skeleton.css" />
+    <link rel="stylesheet" href="/assets/css/site.css" />
+    <link rel="icon" type="image/x-icon" href="/favicon.png" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <div class="row" style="margin-bottom:40px;">
+          <nav class="column">
+            <a class="brand" href="/">Nate Irwin</a>
+            <ul class="nav">
+              <li><a href="/active/">Active</a></li>
+              <li><a href="/books/">Books</a></li>
+              <li><a href="/bucket-list/">Bucket list</a></li>
+              <li><a href="/music/">Music</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="row" style="margin-bottom:40px;">
+          <main class="column">
+            <slot />
+          </main>
+        </div>
+      </div>
+      <div class="push"></div>
+    </div>
+    <footer class="row">
+      <div class="column">
+        <div class="container">
+          <p>Updated: {updated}</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

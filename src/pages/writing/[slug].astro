@@ -1,0 +1,17 @@
+---
+import Layout from "../../components/Layout.astro";
+import { getPosts } from "../../lib/data.js";
+
+export function getStaticPaths() {
+  return getPosts().map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+---
+<Layout>
+  <h1>{post.title}</h1>
+  <Fragment set:html={post.body} />
+</Layout>

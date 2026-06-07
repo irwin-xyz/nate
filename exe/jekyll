@@ -1,8 +1,0 @@
-#!/usr/bin/env ruby
-
-if ARGV.first == "build"
-  exec("npm", "run", "build")
-end
-
-warn "This compatibility shim only supports `jekyll build`."
-exit 1

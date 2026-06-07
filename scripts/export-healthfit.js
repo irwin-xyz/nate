@@ -5,7 +5,7 @@ const FitParserPackage = require("fit-file-parser");
 const FitParser = FitParserPackage.default || FitParserPackage;
 
 const root = path.resolve(__dirname, "..");
-const defaultOutput = "_data/healthfit-workouts.csv";
+const defaultOutput = "src/data/healthfit-workouts.csv";
 
 function loadDotEnv() {
   const envPath = path.join(root, ".env");
@@ -156,7 +156,7 @@ function normalizeSeedActivity(activity) {
 }
 
 function readSeedActivities(cutoffDate) {
-  const seedPath = path.join(root, "_data/activities.json");
+  const seedPath = path.join(root, "src/data/activities.json");
   if (!fs.existsSync(seedPath) || !cutoffDate) return [];
 
   return JSON.parse(fs.readFileSync(seedPath, "utf8"))

@@ -1,0 +1,65 @@
+---
+import Layout from "../../components/Layout.astro";
+import SectionHeader from "../../components/SectionHeader.astro";
+import StatGrid from "../../components/StatGrid.astro";
+import { getSpotifyPlaylists } from "../../lib/data.js";
+import { formatNumber } from "../../lib/site.js";
+
+const data = await getSpotifyPlaylists();
+const playlists = (data.playlists || [])
+  .slice()
+  .sort((a, b) => playlistDateValue(b.name) - playlistDateValue(a.name))
+  .slice(0, 12);
+const totalTracks = playlists.reduce((sum, playlist) => sum + (playlist.tracks?.length || 0), 0);
+const newest = playlists[0];
+
+function playlistDateValue(name) {
+  const date = new Date(`${name} 1`);
+  return Number.isNaN(date.getTime()) ? 0 : date.getTime();
+}
+
+function normalizeTrack(item) {
+  const track = item.track || item;
+  return {
+    name: track.name,
+    artists: (track.artists || []).map((artist) => artist.name).filter(Boolean),
+    url: track.external_urls?.spotify,
+  };
+}
+---
+<Layout>
+  <SectionHeader
+    title="Music"
+    body="Monthly playlists of songs that caught my attention, pulled from Spotify when credentials are available."
+    source={data.source}
+  />
+  <StatGrid
+    stats={[
+      { value: formatNumber(playlists.length), label: "playlists shown" },
+      { value: formatNumber(totalTracks), label: "tracks" },
+      { value: newest?.name || "None", label: "newest playlist" },
+    ]}
+  />
+  <section class="dashboard-section">
+    <h2>Monthly playlists</h2>
+    <div class="playlist-grid">
+      {playlists.map((playlist) => {
+        const tracks = (playlist.tracks || []).slice(0, 12).map(normalizeTrack);
+        return (
+          <article class="playlist-card">
+            <h2>{playlist.external_urls?.spotify ? <a href={playlist.external_urls.spotify}>{playlist.name}</a> : playlist.name}</h2>
+            <p>{formatNumber(playlist.tracks?.length || 0)} tracks</p>
+            <ol>
+              {tracks.map((track) => (
+                <li>
+                  {track.url ? <a href={track.url}>{track.name}</a> : track.name}
+                  <strong>{track.artists.join(", ")}</strong>
+                </li>
+              ))}
+            </ol>
+          </article>
+        );
+      })}
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,66 @@
+---
+import Layout from "../../components/Layout.astro";
+import SectionHeader from "../../components/SectionHeader.astro";
+import StatGrid from "../../components/StatGrid.astro";
+import { getBooks } from "../../lib/data.js";
+import { formatNumber } from "../../lib/site.js";
+
+const data = await getBooks();
+const books = data.books || [];
+const current = books.filter((book) => book.status === "currently_reading").slice(0, 6);
+const read = books.filter((book) => book.status === "read");
+const toRead = books.filter((book) => book.status === "to_read");
+const recentRead = read
+  .sort((a, b) => new Date(b.readAt || b.addedAt || 0) - new Date(a.readAt || a.addedAt || 0))
+  .slice(0, 18);
+---
+<Layout>
+  <SectionHeader
+    title="Books"
+    body="A reading dashboard for what I am reading now, what I have finished, and what is waiting on the shelf."
+    source={data.source}
+  />
+  <StatGrid
+    stats={[
+      { value: formatNumber(read.length), label: "read" },
+      { value: formatNumber(current.length), label: "currently reading" },
+      { value: formatNumber(toRead.length), label: "to read" },
+    ]}
+  />
+  <section class="dashboard-section">
+    <h2>Currently reading</h2>
+    {current.length ? (
+      <div class="dashboard-list">
+        {current.map((book) => (
+          <article class="dashboard-row">
+            <div>
+              <h2>{book.url ? <a href={book.url}>{book.title || "Untitled book"}</a> : book.title || "Untitled book"}</h2>
+              <p>{(book.authors || []).join(", ") || "Unknown author"}</p>
+            </div>
+            <span class="status-pill">{book.status.replace(/_/g, " ")}</span>
+          </article>
+        ))}
+      </div>
+    ) : (
+      <p>No current reads found.</p>
+    )}
+  </section>
+  <section class="dashboard-section">
+    <h2>Recently read</h2>
+    {recentRead.length ? (
+      <div class="dashboard-list">
+        {recentRead.map((book) => (
+          <article class="dashboard-row">
+            <div>
+              <h2>{book.url ? <a href={book.url}>{book.title || "Untitled book"}</a> : book.title || "Untitled book"}</h2>
+              <p>{(book.authors || []).join(", ") || "Unknown author"}</p>
+            </div>
+            <span class="status-pill">{book.status.replace(/_/g, " ")}</span>
+          </article>
+        ))}
+      </div>
+    ) : (
+      <p>No recent reads found.</p>
+    )}
+  </section>
+</Layout>

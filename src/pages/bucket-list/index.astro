@@ -1,0 +1,46 @@
+---
+import Layout from "../../components/Layout.astro";
+import SectionHeader from "../../components/SectionHeader.astro";
+import StatGrid from "../../components/StatGrid.astro";
+import { getBucketList } from "../../lib/data.js";
+import { formatDate, formatNumber } from "../../lib/site.js";
+
+const items = getBucketList();
+const completed = items.filter((item) => item.status === "completed");
+const inProgress = items.filter((item) => item.status === "in_progress");
+const planned = items.filter((item) => item.status === "planned");
+const categories = [...new Set(items.map((item) => item.category))].filter(Boolean);
+const sorted = items.slice().sort((a, b) => {
+  const order = { in_progress: 0, planned: 1, completed: 2 };
+  return order[a.status] - order[b.status] || a.category.localeCompare(b.category) || a.title.localeCompare(b.title);
+});
+---
+<Layout>
+  <SectionHeader
+    title="Bucket List"
+    body="A living list of things I want to do, organized by progress instead of one long checklist."
+    source="manual bucket list data"
+  />
+  <StatGrid
+    stats={[
+      { value: formatNumber(completed.length), label: "completed" },
+      { value: formatNumber(inProgress.length), label: "in progress" },
+      { value: formatNumber(planned.length), label: "planned" },
+      { value: formatNumber(categories.length), label: "categories" },
+    ]}
+  />
+  <section class="dashboard-section">
+    <h2>Progress</h2>
+    <div class="dashboard-list">
+      {sorted.map((item) => (
+        <article class="dashboard-row">
+          <div>
+            <h2>{item.title}</h2>
+            <p>{[item.category, item.completedAt ? `completed ${formatDate(item.completedAt)}` : item.notes].filter(Boolean).join(" · ")}</p>
+          </div>
+          <span class="status-pill">{item.status.replace(/_/g, " ")}</span>
+        </article>
+      ))}
+    </div>
+  </section>
+</Layout>
