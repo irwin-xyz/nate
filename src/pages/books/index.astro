@@ -16,8 +16,9 @@ const recentRead = read
 ---
 <Layout>
   <SectionHeader
+    eyebrow="The shelf"
     title="Books"
-    body="A reading dashboard for what I am reading now, what I have finished, and what is waiting on the shelf."
+    body="What I'm reading now, what I've finished, and what's waiting on the shelf."
     source={data.source}
   />
   <StatGrid
@@ -34,10 +35,10 @@ const recentRead = read
         {current.map((book) => (
           <article class="dashboard-row">
             <div>
-              <h2>{book.url ? <a href={book.url}>{book.title || "Untitled book"}</a> : book.title || "Untitled book"}</h2>
-              <p>{(book.authors || []).join(", ") || "Unknown author"}</p>
+              <h3>{book.url ? <a href={book.url}>{book.title || "Untitled book"}</a> : book.title || "Untitled book"}</h3>
+              <p class="row-meta">{(book.authors || []).join(", ") || "Unknown author"}</p>
             </div>
-            <span class="status-pill">{book.status.replace(/_/g, " ")}</span>
+            <span class={`tag tag--${book.status}`}>{book.status.replace(/_/g, " ")}</span>
           </article>
         ))}
       </div>
@@ -52,10 +53,10 @@ const recentRead = read
         {recentRead.map((book) => (
           <article class="dashboard-row">
             <div>
-              <h2>{book.url ? <a href={book.url}>{book.title || "Untitled book"}</a> : book.title || "Untitled book"}</h2>
-              <p>{(book.authors || []).join(", ") || "Unknown author"}</p>
+              <h3>{book.url ? <a href={book.url}>{book.title || "Untitled book"}</a> : book.title || "Untitled book"}</h3>
+              <p class="row-meta">{(book.authors || []).join(", ") || "Unknown author"}</p>
             </div>
-            <span class="status-pill">{book.status.replace(/_/g, " ")}</span>
+            <span class={`tag tag--${book.status}`}>{book.status.replace(/_/g, " ")}</span>
           </article>
         ))}
       </div>

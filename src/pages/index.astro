@@ -1,28 +1,55 @@
 ---
 import Layout from "../components/Layout.astro";
+import Coordinate from "../components/Coordinate.astro";
+
+const waypoints = [
+  { href: "/active/", index: "01", title: "Active", desc: "Recent miles, hours, and vertical — without the route lines." },
+  { href: "/books/", index: "02", title: "Books", desc: "What I'm reading now and what's behind me." },
+  { href: "/bucket-list/", index: "03", title: "Bucket list", desc: "A living list, sorted by how far along I am." },
+  { href: "/music/", index: "04", title: "Music", desc: "Monthly playlists, pulled from Spotify." },
+];
 ---
 <Layout>
-  <div class="row">
-    <div class="columns">
-      <p style="margin-top:40px;">Hi, I'm Nate. I'm Co-Founder and Chief Product Officer at <a href="https://www.outerspatial.com/">OuterSpatial</a>, where I build products that help people get outside. I live and play in Steamboat Springs, Colorado.</p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="columns six">
+  <section class="hero">
+    <Coordinate label="40.4850° N · 106.8317° W · Steamboat Springs, Colorado" tick />
+    <h1 class="hero__name">Nate Irwin</h1>
+    <p class="hero__lede prose">
+      I'm Co-Founder and Chief Product Officer at <a href="https://www.outerspatial.com/">OuterSpatial</a>,
+      where I build products that help people get outside. I live and play in Steamboat Springs, Colorado.
+    </p>
+  </section>
+
+  <nav class="waypoints" aria-label="Sections">
+    {waypoints.map((w) => (
+      <a class="waypoint" href={w.href}>
+        <span class="waypoint__index">
+          <Coordinate as="span" label={w.index} />
+          <svg class="waypoint__arrow" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 12L12 4M6 4h6v6" />
+          </svg>
+        </span>
+        <span class="waypoint__title">{w.title}</span>
+        <p class="waypoint__desc">{w.desc}</p>
+      </a>
+    ))}
+  </nav>
+
+  <div class="colset prose">
+    <section class="col">
       <h2>Work</h2>
       <p>I spend most of my time building products at <a href="https://www.outerspatial.com">OuterSpatial</a>: native iOS and Android apps plus a web-based content management system for partners who manage outdoor places and experiences. I own product end-to-end, have grown the product and engineering team, and still ship directly with engineers and AI.</p>
-      <p>Before that, I worked for the <a href="https://www.nps.gov/">National Park Service</a>. Some of that work is available on the agency's <a href="https://github.com/nationalparkservice">GitHub organization</a>. Highlights:</p>
+      <p>Before that, I worked for the <a href="https://www.nps.gov/">National Park Service</a>. Some of that work lives on the agency's <a href="https://github.com/nationalparkservice">GitHub organization</a>. Highlights:</p>
       <ul>
-        <li>Park Mobile (<a href="https://itunes.apple.com/us/developer/national-park-service/id447866742">iOS</a> | <a href="https://play.google.com/store/apps/developer?id=National+Park+Service">Android</a>)</li>
+        <li>Park Mobile (<a href="https://itunes.apple.com/us/developer/national-park-service/id447866742">iOS</a> · <a href="https://play.google.com/store/apps/developer?id=National+Park+Service">Android</a>)</li>
         <li><a href="https://www.nps.gov/maps/tools/npmap-builder/">NPMap Builder</a> and <a href="https://www.nps.gov/maps/tools/npmap.js/">NPMap.js</a></li>
         <li><a href="https://www.nps.gov/maps/tools/places/">Places</a></li>
         <li><a href="https://www.nps.gov/maps/tools/park-tiles/">Park Tiles</a></li>
         <li><a href="https://www.nps.gov/maps/tools/symbol-library/">Symbol Library</a></li>
       </ul>
-    </div>
-    <div class="columns six">
-      <h2>Social</h2>
-      <p>You can find me online on a number of different sites:</p>
+    </section>
+    <section class="col">
+      <h2>Elsewhere</h2>
+      <p>You can find me around the web:</p>
       <ul>
         <li><a href="https://github.com/nateirwin/">GitHub</a></li>
         <li><a href="http://www.goodreads.com/user/show/76558-nate-irwin">Goodreads</a></li>
@@ -32,6 +59,6 @@ import Layout from "../components/Layout.astro";
         <li><a href="https://www.strava.com/athletes/nateirwin">Strava</a></li>
         <li><a href="https://twitter.com/nateirwin/">Twitter</a></li>
       </ul>
-    </div>
+    </section>
   </div>
 </Layout>

@@ -29,6 +29,7 @@ function normalizeTrack(item) {
 ---
 <Layout>
   <SectionHeader
+    eyebrow="Monthly mixes"
     title="Music"
     body="Monthly playlists of songs that caught my attention, pulled from Spotify when credentials are available."
     source={data.source}
@@ -47,13 +48,15 @@ function normalizeTrack(item) {
         const tracks = (playlist.tracks || []).slice(0, 12).map(normalizeTrack);
         return (
           <article class="playlist-card">
-            <h2>{playlist.external_urls?.spotify ? <a href={playlist.external_urls.spotify}>{playlist.name}</a> : playlist.name}</h2>
-            <p>{formatNumber(playlist.tracks?.length || 0)} tracks</p>
+            <h3>{playlist.external_urls?.spotify ? <a href={playlist.external_urls.spotify}>{playlist.name}</a> : playlist.name}</h3>
+            <p class="playlist-card__count">{formatNumber(playlist.tracks?.length || 0)} tracks</p>
             <ol>
               {tracks.map((track) => (
                 <li>
-                  {track.url ? <a href={track.url}>{track.name}</a> : track.name}
-                  <strong>{track.artists.join(", ")}</strong>
+                  <span class="track">
+                    {track.url ? <a href={track.url}>{track.name}</a> : track.name}
+                    <strong>{track.artists.join(", ")}</strong>
+                  </span>
                 </li>
               ))}
             </ol>

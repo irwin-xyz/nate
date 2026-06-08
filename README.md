@@ -2,6 +2,15 @@
 
 Personal website for Nate Irwin.
 
+## Design
+
+The site follows the **Field Notes** brand — a cartographic, topographic field-guide
+system. The full guidelines (concept, palette, typography, motifs, voice) live in
+[`BRAND.md`](./BRAND.md). Design tokens are in `public/assets/css/tokens.css`; components
+and layout in `public/assets/css/site.css`. Type is self-hosted Fraunces (display) +
+Inter (body) via `@fontsource-variable`. Light is the default theme; dark is available via
+the header toggle and follows the OS preference when no choice has been made.
+
 ## Development
 
 Build the site:

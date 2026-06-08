@@ -17,9 +17,10 @@ const sorted = items.slice().sort((a, b) => {
 ---
 <Layout>
   <SectionHeader
-    title="Bucket List"
+    eyebrow="Expedition list"
+    title="Bucket list"
     body="A living list of things I want to do, organized by progress instead of one long checklist."
-    source="manual bucket list data"
+    source="a hand-kept list"
   />
   <StatGrid
     stats={[
@@ -35,10 +36,10 @@ const sorted = items.slice().sort((a, b) => {
       {sorted.map((item) => (
         <article class="dashboard-row">
           <div>
-            <h2>{item.title}</h2>
-            <p>{[item.category, item.completedAt ? `completed ${formatDate(item.completedAt)}` : item.notes].filter(Boolean).join(" · ")}</p>
+            <h3>{item.title}</h3>
+            <p class="row-meta">{[item.category, item.completedAt ? `completed ${formatDate(item.completedAt)}` : item.notes].filter(Boolean).join(" · ")}</p>
           </div>
-          <span class="status-pill">{item.status.replace(/_/g, " ")}</span>
+          <span class={`tag tag--${item.status}`}>{item.status.replace(/_/g, " ")}</span>
         </article>
       ))}
     </div>

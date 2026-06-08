@@ -1,51 +1,90 @@
 ---
+import "@fontsource-variable/fraunces/full.css";
+import "@fontsource-variable/inter/index.css";
+import ThemeToggle from "./ThemeToggle.astro";
 import { description, updated } from "../lib/site.js";
+
+const path = Astro.url.pathname;
+const nav = [
+  { href: "/active/", label: "Active" },
+  { href: "/books/", label: "Books" },
+  { href: "/bucket-list/", label: "Bucket list" },
+  { href: "/music/", label: "Music" },
+];
+const isActive = (href) => (href === "/" ? path === "/" : path.startsWith(href));
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme-default>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>nate.irwin.xyz</title>
     <meta name="author" content="Nate Irwin" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f4f0e6" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#14160f" media="(prefers-color-scheme: dark)" />
     <meta property="og:site_name" content="nate.irwin.xyz" />
     <meta property="og:email" content="nate@irwin.xyz" />
     <meta property="og:type" content="blog" />
     <meta property="twitter:account_id" content="14373135" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" type="text/css" />
+    <!-- No-flash theme: apply stored choice before first paint. -->
+    <script is:inline>
+      (function () {
+        try {
+          var t = localStorage.getItem("theme");
+          if (t === "light" || t === "dark") {
+            document.documentElement.setAttribute("data-theme", t);
+          }
+        } catch (e) {}
+        document.documentElement.removeAttribute("data-theme-default");
+      })();
+    </script>
     <link rel="stylesheet" href="/assets/css/normalize.css" />
-    <link rel="stylesheet" href="/assets/css/skeleton.css" />
+    <link rel="stylesheet" href="/assets/css/tokens.css" />
     <link rel="stylesheet" href="/assets/css/site.css" />
     <link rel="icon" type="image/x-icon" href="/favicon.png" />
   </head>
   <body>
-    <div class="wrapper">
-      <div class="container">
-        <div class="row" style="margin-bottom:40px;">
-          <nav class="column">
-            <a class="brand" href="/">Nate Irwin</a>
-            <ul class="nav">
-              <li><a href="/active/">Active</a></li>
-              <li><a href="/books/">Books</a></li>
-              <li><a href="/bucket-list/">Bucket list</a></li>
-              <li><a href="/music/">Music</a></li>
-            </ul>
-          </nav>
-        </div>
-        <div class="row" style="margin-bottom:40px;">
-          <main class="column">
-            <slot />
-          </main>
-        </div>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Faint topographic wash, bleeds off the top-right corner. Decorative. -->
+    <svg class="topo-wash" viewBox="0 0 600 600" aria-hidden="true" focusable="false" preserveAspectRatio="xMaxYMin slice">
+      <g fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M468 -40 C 360 10, 300 90, 330 170 C 360 250, 300 300, 200 300 C 120 300, 70 360, 110 440" />
+        <path d="M520 -40 C 410 20, 345 105, 378 192 C 412 280, 348 338, 232 340 C 140 342, 80 408, 122 498" />
+        <path d="M572 -40 C 462 28, 392 120, 428 214 C 464 310, 396 376, 268 380 C 168 384, 96 456, 138 556" />
+        <path d="M624 -36 C 514 36, 440 134, 478 236 C 516 340, 444 414, 306 420 C 200 424, 116 504, 158 612" />
+        <path d="M420 -44 C 318 0, 262 72, 286 146 C 310 222, 256 268, 168 264" />
+      </g>
+    </svg>
+
+    <header class="site-head">
+      <div class="shell site-head__inner">
+        <a class="wordmark" href="/">Nate Irwin</a>
+        <nav class="site-nav" aria-label="Primary">
+          <ul>
+            {nav.map((item) => (
+              <li>
+                <a href={item.href} aria-current={isActive(item.href) ? "page" : undefined}>
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <ThemeToggle />
+        </nav>
       </div>
-      <div class="push"></div>
-    </div>
-    <footer class="row">
-      <div class="column">
-        <div class="container">
-          <p>Updated: {updated}</p>
-        </div>
+    </header>
+
+    <main id="main" class="shell">
+      <slot />
+    </main>
+
+    <footer class="site-foot">
+      <div class="shell site-foot__inner">
+        <p class="site-foot__coord">40.4850° N · 106.8317° W — Steamboat Springs, Colorado</p>
+        <p class="site-foot__updated">Updated {updated}</p>
       </div>
     </footer>
   </body>

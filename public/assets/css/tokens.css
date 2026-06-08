@@ -1,0 +1,120 @@
+/* ============================================================
+   Field Notes — design tokens
+   Nate Irwin · nate.irwin.xyz
+   Cartographic topographic field-guide system.
+   ============================================================ */
+
+:root {
+  /* --- Color: light (default) --- */
+  --paper: #f4f0e6;
+  --paper-raised: #fbf8f0;
+  --paper-sunk: #ece6d6;
+  --ink: #1a1a17;
+  --forest: #1f3a2e;
+  --forest-soft: #2c5343;
+  --contour: #7a5c3e;
+  --blaze: #e8662a;
+  --blaze-ink: #c5491a; /* blaze tuned for AA text on paper */
+  --muted: #6b6257;
+  --rule: #d9d2c2;
+  --rule-strong: #c4bca8;
+
+  /* status accents */
+  --status-done: var(--forest);
+  --status-active: var(--blaze);
+  --status-planned: var(--contour);
+
+  color-scheme: light;
+
+  /* --- Typography --- */
+  --font-display: "Fraunces Variable", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter Variable", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  /* optical / variation defaults for Fraunces */
+  --display-vsettings: "opsz" 144, "SOFT" 0, "WONK" 0;
+
+  /* fluid type scale (~1.25 modular) */
+  --fs-hero: clamp(3rem, 8.5vw, 5.75rem);
+  --fs-h1: clamp(2.4rem, 5.5vw, 3.4rem);
+  --fs-h2: clamp(1.35rem, 2.6vw, 1.65rem);
+  --fs-h3: 1.0625rem;
+  --fs-lede: clamp(1.075rem, 1.6vw, 1.25rem);
+  --fs-body: 1.0625rem;
+  --fs-small: 0.875rem;
+  --fs-label: 0.72rem;
+  --fs-stat: clamp(1.9rem, 3.4vw, 2.5rem);
+
+  --lh-tight: 1.04;
+  --lh-snug: 1.25;
+  --lh-body: 1.62;
+
+  --tracking-label: 0.14em;
+  --tracking-eyebrow: 0.22em;
+
+  /* --- Space (8px base) --- */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-7: 3rem;
+  --sp-8: 4rem;
+  --sp-9: 6rem;
+
+  /* --- Structure --- */
+  --measure: 68ch;       /* readable text width */
+  --content-max: 56rem;  /* ~896px main column */
+  --gutter: clamp(1.25rem, 5vw, 3rem);
+
+  --radius-sm: 3px;
+  --radius: 6px;
+  --radius-lg: 10px;
+
+  --border-hair: 1px solid var(--rule);
+  --border-strong: 1px solid var(--rule-strong);
+
+  --shadow-card: 0 1px 2px rgba(26, 26, 23, 0.04), 0 8px 24px -16px rgba(26, 26, 23, 0.18);
+
+  --tap: 0.18s ease;
+}
+
+/* --- Color: dark --- */
+[data-theme="dark"] {
+  --paper: #14160f;
+  --paper-raised: #1c1f18;
+  --paper-sunk: #101209;
+  --ink: #ece6d8;
+  --forest: #8fb39b;
+  --forest-soft: #a7c4b1;
+  --contour: #b79b78;
+  --blaze: #f0773b;
+  --blaze-ink: #f7945f; /* lighter blaze reads as AA text on dark paper */
+  --muted: #9b9384;
+  --rule: #2c322b;
+  --rule-strong: #3c443a;
+
+  color-scheme: dark;
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.3), 0 10px 30px -18px rgba(0, 0, 0, 0.6);
+}
+
+/* Honor OS preference only when the user has not chosen explicitly. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not([data-theme="dark"]) {
+    --paper: #14160f;
+    --paper-raised: #1c1f18;
+    --paper-sunk: #101209;
+    --ink: #ece6d8;
+    --forest: #8fb39b;
+    --forest-soft: #a7c4b1;
+    --contour: #b79b78;
+    --blaze: #f0773b;
+    --blaze-ink: #f7945f;
+    --muted: #9b9384;
+    --rule: #2c322b;
+    --rule-strong: #3c443a;
+
+    color-scheme: dark;
+    --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.3), 0 10px 30px -18px rgba(0, 0, 0, 0.6);
+  }
+}

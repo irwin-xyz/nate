@@ -1,0 +1,9 @@
+---
+// Small uppercase tracked metadata label — the cartographic "eyebrow".
+// Pass `label` text or slotted content. `tick` adds a blaze marker tick.
+const { label, tick = false, as = "p" } = Astro.props;
+const Tag = as;
+---
+<Tag class:list={["eyebrow", { "eyebrow--tick": tick }]}>
+  {label ? label : <slot />}
+</Tag>

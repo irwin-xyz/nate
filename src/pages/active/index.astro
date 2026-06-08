@@ -23,8 +23,9 @@ function activityTypeLabel(type) {
 ---
 <Layout>
   <SectionHeader
+    eyebrow="Field log"
     title="Active"
-    body="A summary of recent outdoor activity without publishing route lines or precise start locations."
+    body="A summary of recent outdoor activity — without publishing route lines or precise start locations."
     source={data.source}
   />
   <StatGrid
@@ -32,7 +33,7 @@ function activityTypeLabel(type) {
       { value: formatNumber(activities.length), label: "recent activities" },
       { value: formatNumber(totalMiles, { maximumFractionDigits: 1 }), label: "miles" },
       { value: formatNumber(totalHours, { maximumFractionDigits: 1 }), label: "moving hours" },
-      { value: `${formatNumber(totalGain, { maximumFractionDigits: 0 })} m`, label: "elevation gain" },
+      { value: formatNumber(totalGain, { maximumFractionDigits: 0 }), label: "meters climbed" },
     ]}
   />
   <section class="dashboard-section">
@@ -55,12 +56,12 @@ function activityTypeLabel(type) {
           return (
             <article class="dashboard-row">
               <div>
-                <h2>{activity.name || activity.type || "Activity"}</h2>
-                <p>{[formatDate(activity.start_date || activity.start_date_local), activity.type, location].filter(Boolean).join(" · ")}</p>
+                <h3>{activity.name || activity.type || "Activity"}</h3>
+                <p class="row-meta">{[formatDate(activity.start_date || activity.start_date_local), activity.type, location].filter(Boolean).join(" · ")}</p>
               </div>
               <div class="metric-pair">
-                <span>{formatNumber(milesFromMeters(activity.distance), { maximumFractionDigits: 1 })} mi</span>
-                <span>{formatNumber(hoursFromSeconds(activity.moving_time), { maximumFractionDigits: 1 })} hr</span>
+                <span><span class="metric-value">{formatNumber(milesFromMeters(activity.distance), { maximumFractionDigits: 1 })}</span><span class="metric-unit">mi</span></span>
+                <span><span class="metric-value">{formatNumber(hoursFromSeconds(activity.moving_time), { maximumFractionDigits: 1 })}</span><span class="metric-unit">hr</span></span>
               </div>
             </article>
           );

@@ -1,10 +1,12 @@
 ---
-import { formatDate, generatedAt, slug } from "../lib/site.js";
+import { formatDate, generatedAt } from "../lib/site.js";
+import Coordinate from "./Coordinate.astro";
 
-const { title, body, source } = Astro.props;
+const { title, body, source, eyebrow } = Astro.props;
 ---
 <header class="section-header">
-  <h1 id={slug(title)}>{title}</h1>
+  {eyebrow && <Coordinate label={eyebrow} tick />}
+  <h1>{title}</h1>
   <p>{body}</p>
   <p class="source-note">Generated {formatDate(generatedAt)} from {source}.</p>
 </header>
