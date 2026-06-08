@@ -1,8 +1,15 @@
+version: "1"
 services:
-  - type: web
-    name: nate
-    runtime: static
-    buildCommand: npm run build
-    staticPublishPath: ./_site
-    branch: main
-    autoDeploy: true
+- type: web
+  name: nate
+  runtime: static
+  repo: https://github.com/irwin-xyz/nate
+  envVars:
+  - key: .env
+    sync: false
+  buildCommand: npm run build
+  staticPublishPath: _site
+  domains:
+  - nate.irwin.xyz
+  - www.nate.irwin.xyz
+  autoDeployTrigger: commit
